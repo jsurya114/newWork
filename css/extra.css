@@ -1,3 +1,4 @@
+<style>
 /* Base styles */
 .arch-projects-wrapper {
     padding: 120px 0 100px;
@@ -293,4 +294,14 @@
     .arch-subtitle {
         font-size: 16px;
     }
+}
+/* Add this CSS to your style.css or in a style tag in the head section */
+.arch-projects-wrapper {
+    margin-bottom: 80px; /* Adds space below the projects section */
+    padding-bottom: 20px; /* Additional padding at the bottom of the section */
+}
+
+/* Alternative approach if the above doesn't work well with your layout */
+footer.footer {
+    margin-top: 80px; /* Adds space above the footer */
 }
