@@ -84,6 +84,58 @@ button.slick-next {
 }
 
 
+/* Ensure slider container is positioned for arrow alignment */
+.slider {
+  position: relative;
+}
+
+/* Left arrow */
+button.slick-prev {
+  position: absolute;
+  top: 50%;
+  left: -55px; /* move slightly left */
+  transform: translateY(-50%);
+  z-index: 10;
+
+  background-image: url(../images/prev-arrow.png);
+  font-size: 0;
+  width: 45px;
+  height: 45px;
+  display: block;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  outline: none;
+}
+
+/* Right arrow */
+button.slick-next {
+  position: absolute;
+  top: 50%;
+  right: -55px; /* move slightly right */
+  transform: translateY(-50%);
+  z-index: 10;
+
+  background-image: url(../images/next-arrow.png);
+  font-size: 0;
+  width: 45px;
+  height: 45px;
+  display: block;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  outline: none;
+}
+
+/* Responsive: Hide arrows on small devices */
+@media only screen and (max-width: 500px) {
+  button.slick-prev,
+  button.slick-next {
+    display: none !important;
+  }
+}
 
 
 

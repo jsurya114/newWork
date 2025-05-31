@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,6 +37,7 @@
     <!-- Main CSS-->
     <link href="css/main.min.css" rel="stylesheet" media="all">
     <link href="css/style.css" rel="stylesheet" media="all">
+     <link href="css/edit.css" rel="stylesheet" media="all">
 
     <!--Favicons-->
     <link rel="shortcut icon" href="images/icon/favicon.jpg">
@@ -73,10 +75,10 @@
                                     <nav class="header-nav-menu">
                                         <ul class="menu nav-menu">
                                             <li class="menu-item menu-item-has-children">
-                                                <a href="index.html">Home</a>
+                                                <a href="home-main.html">Home</a>
                                             </li>
                                             <li class="menu-item">
-                                                  <a href="works.html">Our Works</a>
+                                                <a href="about-us.html">about</a>
                                             </li>
                                             <li class="menu-item">
                                                 <a href="contact.html">contact</a>
@@ -122,11 +124,11 @@
                     <div class="container-fluid">
                         <ul class="menu nav-menu menu-mobile">
                             <li class="menu-item menu-item-has-children">
-                                <a href="index.html">Home</a>
+                                <a href="home-main.html">Home</a>
                                 
                             </li>
                             <li class="menu-item">
-                                <a href="works.html">Our Works</a>
+                                <a href="about-us.html">about</a>
                             </li>
                             
                             
@@ -213,6 +215,7 @@
                         </ul>
                     </div>
                 </div>
+                
                 <div class="rev-spacer"></div>
             </section>
             <!-- END SLIDER-->
@@ -251,58 +254,64 @@
             </section>
             <!-- END ABOUT US-->
 
-            <section class="p-t-15 our-customers">
-                <div class="container">
-                    <div class="section-title m-b-100">
-                        <h5 class="title-sub">Still Want to Know More</h5>
-                        <h2 class="title-1">Here From Our Customers</h2>
-                    </div>
+<section class="p-t-15 our-customers">
+  <div class="container">
+    <div class="section-title m-b-100">
+      <h5 class="title-sub">Still Want to Know More</h5>
+      <h2 class="title-1">Here From Our Customers</h2>
+    </div>
 
-                    <div class="slider">
-                        <div class="video-card" onclick="openVideoModal('video/customer-01.mp4', 'Project Alpha', 'A short description of Project Alpha.')" autoplay>
-                          <video src="video/customer-01.mp4" muted loop></video>
-                          <div class="project-info">
-                            <strong>Project Alpha</strong>
-                            <p>A short description of Project Alpha.</p>
-                          </div>
-                        </div>
-                    
-                        <div class="video-card" onclick="openVideoModal('video/customer-02.mp4', 'Project Beta', 'A short description of Project Beta.')" autoplay>
-                          <video src="video/customer-02.mp4" muted loop></video>
-                          <div class="project-info">
-                            <strong>Project Beta</strong>
-                            <p>A short description of Project Beta.</p>
-                          </div>
-                        </div>
-                    
-                        <div class="video-card" onclick="openVideoModal('video/customer-03.mp4', 'Project Gamma', 'A short description of Project Gamma.')" autoplay>
-                          <video src="video/customer-03.mp4" muted loop></video>
-                          <div class="project-info">
-                            <strong>Project Gamma</strong>
-                            <p>A short description of Project Gamma.</p>
-                          </div>
-                        </div>
-                        <div class="video-card" onclick="openVideoModal('video/customer-02.mp4', 'Project Gamma', 'A short description of Project Gamma.')" autoplay>
-                            <video src="video/customer-02.mp4" muted loop></video>
-                            <div class="project-info">
-                              <strong>Project Gamma</strong>
-                              <p>A short description of Project Gamma.</p>
-                            </div>
-                          </div>
-                      </div>
-                      
-                      <!-- Modal -->
-                      <div id="videoModal" class="modal">
-                        <div class="modal-content">
-                          <span class="close-btn" onclick="closeVideoModal()">&times;</span>
-                          <h2 id="modalTitle"></h2>
-                          <video id="modalVideo" controls></video>
-                          <p id="modalDescription"></p>
-                        </div>
-                      </div>
+    <div class="slider">
+      <div class="video-card" onclick="openVideoModal('video/customer-01.mp4', 'Project Alpha', 'A short description of Project Alpha.')">
+        <video src="video/customer-01.mp4" muted loop></video>
+        <div class="play-button"></div>
+        <div class="project-info">
+          <strong>Project Alpha</strong>
+          <p>A short description of Project Alpha.</p>
+        </div>
+      </div>
 
-                    </div>
-                    </section>
+      <div class="video-card" onclick="openVideoModal('video/customer-02.mp4', 'Project Beta', 'A short description of Project Beta.')">
+        <video src="video/customer-02.mp4" muted loop></video>
+        <div class="play-button"></div>
+        <div class="project-info">
+          <strong>Project Beta</strong>
+          <p>A short description of Project Beta.</p>
+        </div>
+      </div>
+
+      <div class="video-card" onclick="openVideoModal('video/customer-03.mp4', 'Project Gamma', 'A short description of Project Gamma.')">
+        <video src="video/customer-03.mp4" muted loop></video>
+        <div class="play-button"></div>
+        <div class="project-info">
+          <strong>Project Gamma</strong>
+          <p>A short description of Project Gamma.</p>
+        </div>
+      </div>
+
+      <div class="video-card" onclick="openVideoModal('video/customer-02.mp4', 'Project Gamma', 'A short description of Project Gamma.')">
+        <video src="video/customer-02.mp4" muted loop></video>
+        <div class="play-button"></div>
+        <div class="project-info">
+          <strong>Project Gamma</strong>
+          <p>A short description of Project Gamma.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="videoModal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn" onclick="closeVideoModal()">&times;</span>
+        <h2 id="modalTitle"></h2>
+        <video id="modalVideo" controls></video>
+        <p id="modalDescription"></p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 
             <!-- LASTEST PROJECT-->
             <section class="wrap wrap--w1790 p-b-75">
@@ -423,7 +432,7 @@
     
 
             <!-- CLIENT-->
-            <section class="p-t-15">
+            <!-- <section class="p-t-15">
                 <div class="container">
                     <div class="section-title m-b-100">
                         <h5 class="title-sub">awesome partner</h5>
@@ -472,7 +481,7 @@
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> -->
             <!-- END CLIENT-->
 
           

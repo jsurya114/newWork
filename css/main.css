@@ -5333,9 +5333,9 @@ button {
   position: relative;
 }
 
-.header-mobile .header-mobile__bar {
+/* .header-mobile .header-mobile__bar {
   padding: 15px 0;
-}
+} */
 
 .header-mobile .header-mobile__bar-inner {
   display: -webkit-box;

@@ -1,0 +1,280 @@
+/* HEADER POSITIONING - Make header overlay the banner */
+#header {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 999 !important;
+    width: 100% !important;
+}
+
+/* Make header fully transparent - no background at all */
+.header,
+.header-1,
+.header__bar,
+.header-mobile,
+.header-mobile__bar {
+    background: transparent !important;
+    background-color: transparent !important;
+}
+
+/* Remove any existing background properties */
+#header .header {
+    background: none !important;
+}
+
+
+/* Reduce header height */
+.header__bar {
+    padding: 10px 0 !important;
+    height: auto !important;
+    min-height: 60px !important;
+}
+
+.header-mobile__bar {
+    padding: 8px 0 !important;
+    height: auto !important;
+    min-height: 55px !important;
+}
+
+/* Reduce logo size to 85px */
+.logo img {
+    max-width: 85px !important;
+    height: auto !important;
+}
+
+/* Ensure mobile header is also transparent */
+.header-mobile__bar-inner {
+    background: transparent !important;
+}
+
+/* Make sure navigation menu background is transparent */
+.header-nav-menu {
+    background: transparent !important;
+}
+
+/* BANNER/SLIDER ADJUSTMENTS - Remove any top margin/padding */
+#main {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+.rev_slider_wrapper {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* Remove any spacing that might cause white gap */
+.page-line {
+    display: none !important; /* This might be causing spacing issues */
+}
+
+/* Optional: Add text shadow for better readability over banner images */
+.header .logo img,
+.header-nav-menu .menu a,
+.header-social a {
+    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.5));
+}
+
+/* Make navigation text more readable over banner */
+.header-nav-menu .menu a {
+    color: white !important;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.7) !important;
+}
+
+/* Mobile menu adjustments */
+.header-nav-menu-mobile {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+/* Fix mobile menu positioning */
+.header-mobile {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 999 !important;
+}
+
+/* Ensure slider starts from very top */
+.rev_slider_wrapper--p80 {
+    padding-top: 0 !important;
+}
+
+/* Remove any container margins that might cause gaps */
+.page-wrapper {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* Additional fix for any wrapper spacing */
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Fix for revolution slider positioning */
+.rev_slider {
+    margin-top: 0 !important;
+}
+
+/* Ensure full height coverage */
+.rev_slider_wrapper {
+    position: relative !important;
+    top: 0 !important;
+}
+
+/* Remove any default spacing from main sections */
+section:first-child {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* FINAL GAP FIX - Add this to your CSS file */
+
+/* Remove the spacer div that creates gap */
+.rev-spacer {
+    display: none !important;
+}
+
+/* Remove top padding from about us section */
+section.p-t-10.p-b-55 {
+    padding-top: 0 !important;
+    margin-top: -30px !important;
+}
+
+/* Force slider wrapper to have no bottom spacing */
+.rev_slider_wrapper {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.tp-fullwidth-forcer {
+  height: 60px !important;   /* Moderate spacing */
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+section.p-t-10.p-b-55 {
+  margin-top: 0 !important;
+  padding-top: 40px !important;  /* Comfortable top spacing */
+}
+
+  .our-customers {
+      padding-top: 60px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .slider {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .video-card {
+      position: relative;
+      width: 300px;
+      border-radius: 10px;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .video-card video {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .video-card .project-info {
+      padding: 10px;
+      background: #fff;
+    }
+
+    .video-card strong {
+      display: block;
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+
+    .video-card p {
+      font-size: 14px;
+      color: #555;
+    }
+
+    .play-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60px;
+      height: 60px;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+    }
+
+    .play-button::before {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      border-left: 20px solid white;
+      border-top: 12px solid transparent;
+      border-bottom: 12px solid transparent;
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      padding-top: 60px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .modal-content {
+      margin: auto;
+      background-color: #fff;
+      padding: 20px;
+      width: 80%;
+      max-width: 800px;
+      border-radius: 10px;
+      position: relative;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      color: #aaa;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .close-btn:hover {
+      color: #000;
+    }
+
+    #modalVideo {
+      width: 100%;
+      height: auto;
+      margin-top: 10px;
+    }
+
+
+    
