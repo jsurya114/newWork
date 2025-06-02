@@ -83,6 +83,7 @@ button.slick-next {
     padding: 10px 0;
 }
 
+
 /* Ensure slider container is positioned for arrow alignment */
 .slider {
   position: relative;
@@ -135,7 +136,6 @@ button.slick-next {
     display: none !important;
   }
 }
-
 
 
 
@@ -244,173 +244,3 @@ button.slick-next {
   padding-top: 0;
 }
   }
-/* Force Revolution bullets to be horizontal */
-.tp-bullets {
-    display: flex !important;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row !important;
-    gap: 10px; /* spacing between bullets */
-    bottom: 55px !important; /* ensure it's positioned well */
-    left: 0;
-    right: 0;
-    width: 100%;
-}
-/* ----------------------------
-   HIDE ALL SLIDER ARROWS
----------------------------- */
-.tp-leftarrow, .tp-rightarrow {
-    display: none !important;
-}
-
-/* Hide specific arrow styles */
-.au-rev-arrow-1.tp-leftarrow, 
-.au-rev-arrow-2.tp-leftarrow, 
-.au-rev-arrow-3.tp-leftarrow, 
-.au-rev-arrow-4.tp-leftarrow,
-.au-rev-arrow-1.tp-rightarrow, 
-.au-rev-arrow-2.tp-rightarrow, 
-.au-rev-arrow-3.tp-rightarrow, 
-.au-rev-arrow-4.tp-rightarrow {
-    display: none !important;
-}
-/* -------------------------------------------
-   HIDE ALL SLIDER ARROWS
--------------------------------------------- */
-.tp-leftarrow, .tp-rightarrow {
-    display: none !important;
-}
-
-.au-rev-arrow-1.tp-leftarrow,
-.au-rev-arrow-2.tp-leftarrow,
-.au-rev-arrow-3.tp-leftarrow,
-.au-rev-arrow-4.tp-leftarrow,
-.au-rev-arrow-1.tp-rightarrow,
-.au-rev-arrow-2.tp-rightarrow,
-.au-rev-arrow-3.tp-rightarrow,
-.au-rev-arrow-4.tp-rightarrow {
-    display: none !important;
-}
-
-/* -------------------------------------------
-   HORIZONTAL, CENTERED, BLACK BULLETS (DOTS)
--------------------------------------------- */
-.tp-bullets,
-.tp-bullets.au-rev-bullet-1,
-.tp-bullets.au-rev-bullet-1.nav-dir-horizontal {
-    position: absolute !important;
-    bottom: 80px !important; /* Moved bullets higher up from bottom */
-    left: 50% !important;    /* Center horizontally */
-    transform: translateX(-50%) !important;
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    flex-direction: row !important;
-    gap: 15px !important;    /* Space between bullets */
-    z-index: 9999 !important;
-    width: auto !important;
-    height: auto !important;
-}
-
-/* Individual Bullet Style */
-.tp-bullets .tp-bullet {
-    display: inline-block !important;
-    width: 14px !important;
-    height: 60px !important;
-color: #000;
-    
-    cursor: pointer !important;
-    transition: all 0.3s ease !important;
-   
-}
-
-/* Active Bullet */
-.tp-bullets .tp-bullet.selected {
-   
-    
-    transform: scale(1.1) !important; /* Slightly larger when active */
-    /* box-shadow: 0 3px 12px rgba(0, 0, 0, 0.5) !important; */
-}
-
-/* Hover Effect */
-.tp-bullets .tp-bullet:hover {
-  
-    transform: scale(1.1) !important;
-
-}
-
-/* -------------------------------------------
-   SLIDER WRAPPER & TEXT STYLING
--------------------------------------------- */
-.rev_slider_wrapper {
-    position: relative;
-    overflow: hidden;
-}
-
-.rev_slider_wrapper--p80 {
-    padding: 80px 0;
-}
-
-.rev-text-1 {
-    font-family: 'Poppins', sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-.rev-text-2 {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-    line-height: 1.2;
-}
-
-.rev-btn-1 {
-    display: inline-block;
-    padding: 15px 30px;
-    background: rgba(255, 255, 255, 0.1);
-    border: 2px solid #fff;
-    color: #fff;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: 600;
-    letter-spacing: 1px;
-    transition: all 0.3s ease;
-}
-
-.rev-btn-1:hover {
-    background: #fff;
-    color: #333;
-}
-
-.rev-btn-1 .arrow {
-    margin-left: 10px;
-}
-
-/* Spacer under slider */
-.rev-spacer {
-    height: 80px;
-}
-
-/* -------------------------------------------
-   RESPONSIVE STYLES
--------------------------------------------- */
-@media (max-width: 768px) {
-    .rev_slider_wrapper--p80 {
-        padding: 40px 0;
-    }
-
-    .rev-spacer {
-        height: 40px;
-    }
-    
-    /* Adjust bullet position for mobile */
-    .tp-bullets,
-    .tp-bullets.au-rev-bullet-1,
-    .tp-bullets.au-rev-bullet-1.nav-dir-horizontal {
-        bottom: 60px !important; /* Less spacing on mobile */
-    }
-    
-    .tp-bullets .tp-bullet {
-        width: 12px !important;
-        height: 12px !important;
-    }
-}
