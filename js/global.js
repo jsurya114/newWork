@@ -622,7 +622,6 @@
     // USE STRICT
     "use strict";
 
-
     //-------------------------------------------------------
     // Header
     //-------------------------------------------------------
@@ -652,17 +651,18 @@
             var headerbar = that.find('.header__bar');
 
             var headerbarOffsetTop = headerbar.offset().top;
-            var headerbarHeight = headerbar.outerHeight();
+            var headerbarHeight = 80; // Set a fixed height instead of measuring
 
-            headerbar.after("<div class='header__holder'></div>");
+            // Add placeholder for sticky spacing
+            headerbar.after("<div class='header__holder' style='height: 0px;'></div>");
 
             $(window).on('scroll', function () {
                 if ($(window).scrollTop() > headerbarOffsetTop) {
-                    $('.header__holder').css('height', headerbarHeight);
+                    $('.header__holder').css('height', headerbarHeight + 'px');
                     headerbar.addClass('header--fixed');
                 } else {
                     headerbar.removeClass("header--fixed");
-                    $('.header__holder').css('height', 0);
+                    $('.header__holder').css('height', '0px');
                 }
             });
         });
@@ -670,9 +670,8 @@
         console.log(error);
     }
 
-
-
 })(jQuery);
+
 
 (function ($) {
     'use strict';
