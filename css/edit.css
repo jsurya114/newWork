@@ -371,6 +371,9 @@ section.p-t-10.p-b-55 {
 .close-btn:hover {
   color: #000;
 }
+.header__holder {
+height: 81px;
+}
 
 #modalVideo {
   width: 100%;
