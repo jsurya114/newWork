@@ -73,7 +73,7 @@
 
 /* Navigation text styling - white by default (over banner) */
 .header-nav-menu .menu a {
-    color: white !important;
+    color: rgb(0, 0, 0) !important;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7) !important;
     transition: all 0.3s ease !important;
 }
