@@ -38,12 +38,26 @@
     <link href="css/style.css" rel="stylesheet" media="all">
    <link href="css/contact.css" rel="stylesheet" media="all">
       <link href="css/edit.css" rel="stylesheet" media="all">
+            <link href="css/extra.css" rel="stylesheet" media="all">
+
 
     <!--Favicons-->
     <link rel="shortcut icon" href="images/icon/favicon.jpg">
     <link rel="apple-touch-icon" href="apple-icon.png">
     <link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
     <link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+
+
+    <style>
+.au-rev-arrow-1.tp-leftarrow, .au-rev-arrow-2.tp-leftarrow, .au-rev-arrow-3.tp-leftarrow, .au-rev-arrow-4.tp-leftarrow {
+    margin-left: 20px !important;
+    margin-top: -20px;
+}
+.au-rev-arrow-1.tp-rightarrow, .au-rev-arrow-2.tp-rightarrow, .au-rev-arrow-3.tp-rightarrow, .au-rev-arrow-4.tp-rightarrow {
+    margin-right: 20px !important;
+    margin-top: -20px;
+}
+</style>
 
    
 </head>
@@ -443,6 +457,25 @@
 
     <!-- Main JS-->
     <script src="js/global.js"></script>
+
+    <script>
+window.addEventListener('scroll', function() {
+    const header = document.getElementById('header');
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+    if (scrollTop > 50) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const header = document.getElementById('header');
+    header.classList.remove('scrolled');
+});
+</script>
+
 
     <!-- Contact Form JS -->
     <script>
