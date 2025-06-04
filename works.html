@@ -5,12 +5,12 @@
     <!-- Required meta tags-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Tatee Theme Templates">
+    <meta name="description" content="New Bharath Craft Interiors - Project Details">
     <meta name="author" content="AuCreative">
-    <meta name="keywords" content="Tatee Theme Templates">
+    <meta name="keywords" content="Interior Design, Architecture, Project Details">
 
     <!-- Title Page-->
-    <title>New Bharath Craft Interiors</title>
+    <title>Project Details - New Bharath Craft Interiors</title>
 
     <!-- Icons font CSS-->
     <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
@@ -36,8 +36,7 @@
     <link href="css/main.min.css" rel="stylesheet" media="all">
     <link href="css/style.css" rel="stylesheet" media="all">
     <link href="css/edit.css" rel="stylesheet" media="all">
-    <link rel="stylesheet" href="css/extra.css">
-    
+
     <!--Favicons-->
     <link rel="shortcut icon" href="images/icon/favicon.jpg">
     <link rel="apple-touch-icon" href="apple-icon.png">
@@ -54,599 +53,748 @@
         margin-top: -20px;
     }
 
-    /* Enhanced Project Card Hover Styles */
-    .arch-project-card {
-        position: relative;
-        overflow: hidden;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        cursor: pointer;
+    /* Project Details Specific Styles */
+    body {
+        background-color: #1a1a1a; /* Darker background matching works.html */
+        color: #e0e0e0;
     }
 
-    .arch-project-card:hover {
+    .project-hero {
+        position: relative;
+        height: 70vh;
+        background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-align: center;
+        margin-top: 70px;
+    }
+
+    .project-hero-content h1 {
+        font-size: 3.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+
+    .project-hero-content p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    }
+
+    .project-status-badge {
+        display: inline-block;
+        padding: 8px 20px;
+        background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+        color: white;
+        border-radius: 25px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 0.9rem;
+    }
+
+    .project-details-section {
+        padding: 80px 0;
+        background: #1a1a1a; /* Darker background matching works.html */
+        color: #e0e0e0;
+    }
+
+    .project-info-card {
+        background: #252525; /* Darker card background */
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        margin-bottom: 30px;
+        transition: transform 0.3s ease;
+        color: #e0e0e0;
+    }
+
+    .project-info-card:hover {
         transform: translateY(-5px);
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
     }
 
-    .arch-project-image {
+    .info-card-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 20px;
+        border-bottom: 3px solid #ff6b6b;
+        padding-bottom: 10px;
+    }
+
+    .info-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 0;
+        border-bottom: 1px solid #333;
+    }
+
+    .info-item:last-child {
+        border-bottom: none;
+    }
+
+    .info-label {
+        font-weight: 600;
+        color: #aaa;
+    }
+
+    .info-value {
+        color: #fff;
+        font-weight: 500;
+    }
+
+    .project-gallery {
+        padding: 80px 0;
+        background: #1a1a1a; /* Darker background matching works.html */
+    }
+
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        margin-top: 40px;
+    }
+
+    .gallery-item {
         position: relative;
+        border-radius: 15px;
         overflow: hidden;
+        cursor: pointer;
+        transition: transform 0.3s ease;
     }
 
-    .arch-project-overlay {
+    .gallery-item:hover {
+        transform: scale(1.05);
+    }
+
+    .gallery-item img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+    }
+
+    .gallery-overlay {
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
-        background: linear-gradient(45deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
-        opacity: 0;
-        transition: opacity 0.3s ease;
+        background: rgba(0,0,0,0.7);
         display: flex;
         align-items: center;
         justify-content: center;
-        z-index: 2;
+        opacity: 0;
+        transition: opacity 0.3s ease;
     }
 
-    .arch-project-card:hover .arch-project-overlay {
+    .gallery-item:hover .gallery-overlay {
         opacity: 1;
     }
 
-    .view-project-btn {
+    .gallery-overlay i {
+        color: white;
+        font-size: 2rem;
+    }
+
+    .project-description {
+        padding: 80px 0;
+        background: #1a1a1a; /* Darker background matching works.html */
+    }
+
+    .description-content {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #ccc;
+    }
+
+    .features-list {
+        list-style: none;
+        padding: 0;
+    }
+
+    .features-list li {
+        padding: 10px 0;
+        border-bottom: 1px solid #333;
+        position: relative;
+        padding-left: 30px;
+        color: #ccc;
+    }
+
+    .features-list li:before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: #ff6b6b;
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+
+    .back-to-works {
+        display: inline-block;
+        padding: 12px 30px;
         background: linear-gradient(45deg, #ff6b6b, #ee5a24);
         color: white;
-        border: none;
-        padding: 12px 24px;
+        text-decoration: none;
         border-radius: 25px;
         font-weight: 600;
-        font-size: 14px;
         text-transform: uppercase;
         letter-spacing: 1px;
-        transform: translateY(20px);
-        opacity: 0;
         transition: all 0.3s ease;
-        cursor: pointer;
-        box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+        margin-bottom: 40px;
     }
 
-    .arch-project-card:hover .view-project-btn {
-        transform: translateY(0);
-        opacity: 1;
-    }
-
-    .view-project-btn:hover {
+    .back-to-works:hover {
         background: linear-gradient(45deg, #ee5a24, #ff6b6b);
         transform: translateY(-2px);
         box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+        color: white;
+        text-decoration: none;
     }
 
-    .arch-project-image img {
-        transition: transform 0.3s ease;
+    .timeline {
+        position: relative;
+        padding: 20px 0;
     }
 
-    .arch-project-card:hover .arch-project-image img {
-        transform: scale(1.05);
+    .timeline:before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: #ff6b6b;
+        transform: translateX(-50%);
     }
 
-    /* Additional hover effects for project content */
-    .arch-project-content {
-        transition: all 0.3s ease;
+    .timeline-item {
+        position: relative;
+        margin: 30px 0;
+        width: 45%;
     }
 
-    .arch-project-card:hover .arch-project-content {
-        background: rgba(255, 255, 255, 0.95);
+    .timeline-item:nth-child(odd) {
+        left: 0;
+        text-align: right;
+        padding-right: 30px;
     }
 
-    .arch-project-title {
-        transition: color 0.3s ease;
+    .timeline-item:nth-child(even) {
+        left: 55%;
+        text-align: left;
+        padding-left: 30px;
     }
 
-    .arch-project-card:hover .arch-project-title {
+    .timeline-item:before {
+        content: '';
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        background: #ff6b6b;
+        border-radius: 50%;
+        top: 20px;
+    }
+
+    .timeline-item:nth-child(odd):before {
+        right: -7px;
+    }
+
+    .timeline-item:nth-child(even):before {
+        left: -7px;
+    }
+
+    .timeline-content {
+        background: #252525; /* Darker card background */
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        color: #e0e0e0;
+    }
+
+    .timeline-date {
+        font-weight: 700;
         color: #ff6b6b;
+        margin-bottom: 10px;
+    }
+
+    /* Image Modal */
+    .image-modal {
+        display: none;
+        position: fixed;
+        z-index: 9999;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.9);
+        align-items: center;
+        justify-content: center;
+    }
+
+    .modal-image {
+        max-width: 90%;
+        max-height: 90%;
+        border-radius: 10px;
+    }
+
+    .modal-close {
+        position: absolute;
+        top: 20px;
+        right: 35px;
+        color: white;
+        font-size: 40px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .modal-close:hover {
+        opacity: 0.7;
+    }
+
+    .section-title h2 {
+        color: #fff;
+    }
+
+    .section-title p.subtitle {
+        color: #aaa;
+    }
+
+    @media (max-width: 768px) {
+        .project-hero-content h1 {
+            font-size: 2.5rem;
+        }
+
+        .timeline:before {
+            left: 20px;
+        }
+
+        .timeline-item {
+            width: calc(100% - 40px);
+            left: 40px !important;
+            text-align: left !important;
+            padding-left: 20px !important;
+            padding-right: 0 !important;
+        }
+
+        .timeline-item:before {
+            left: -27px !important;
+        }
+
+        .gallery-grid {
+            grid-template-columns: 1fr;
+        }
     }
     </style>
 </head>
 
-<body>
-    <!-- HEADER-->
-    <header id="header">
-        <div class="header header-1 d-none d-lg-block js-header-1">
-            <div class="header__bar">
-                <div class="wrap wrap--w1790">
+<body class="animsition js-preloader">
+    <div class="page-wrapper">
+        <!-- HEADER-->
+        <header id="header">
+            <div class="header header-1 d-none d-lg-block js-header-1">
+                <div class="header__bar">
+                    <div class="wrap wrap--w1790">
+                        <div class="container-fluid">
+                            <div class="header__content">
+                                <div class="logo">
+                                    <a href="index.html">
+                                        <img src="images/logo.png" alt="New Bharath Craft Interiors" />
+                                    </a>
+                                </div>
+                                <div class="header__content-right">
+                                    <nav class="header-nav-menu">
+                                        <ul class="menu nav-menu">
+                                            <li class="menu-item">
+                                                <a href="index.html">Home</a>
+                                            </li>
+                                            <li class="menu-item">
+                                                <a href="works.html">Our Works</a>
+                                            </li>
+                                            <li class="menu-item">
+                                                <a href="contact.html">Contact</a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                    <div class="header-social">
+                                        <ul class="list-social">
+                                            <li class="list-social__item">
+                                                <a class="ic-fb" href="#">
+                                                    <i class="zmdi zmdi-facebook"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-social__item">
+                                                <a class="ic-insta" href="#">
+                                                    <i class="zmdi zmdi-instagram"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-mobile d-block d-lg-none">
+                <div class="header-mobile__bar">
                     <div class="container-fluid">
-                        <div class="header__content">
-                            <div class="logo">
-                                <a href="/index.html">
-                                    <img src="images/logo.png" alt="Tatee" />
+                        <div class="header-mobile__bar-inner">
+                            <a class="logo" href="index.html">
+                                <img src="images/logo.png" alt="New Bharath Craft Interiors" />
+                            </a>
+                            <button class="hamburger hamburger--slider float-right" type="button">
+                                <span class="hamburger-box">
+                                    <span class="hamburger-inner"></span>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <nav class="header-nav-menu-mobile">
+                    <div class="container-fluid">
+                        <ul class="menu nav-menu menu-mobile">
+                            <li class="menu-item">
+                                <a href="index.html">Home</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="works.html">Our Works</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="contact.html">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <!-- END HEADER-->
+
+        <!-- PROJECT HERO SECTION -->
+        <section class="project-hero">
+            <div class="project-hero-content">
+                <h1>Luxury Villa Project</h1>
+                <p>Modern architectural excellence meets timeless design</p>
+                <span class="project-status-badge">Completed 2023</span>
+            </div>
+        </section>
+
+        <!-- MAIN CONTENT -->
+        <main id="main">
+            <!-- BACK TO WORKS -->
+            <section class="project-details-section">
+                <div class="container">
+                    <a href="works.html" class="back-to-works">
+                        <i class="zmdi zmdi-arrow-left"></i> Back to Our Works
+                    </a>
+
+                    <div class="row">
+                        <!-- PROJECT INFO -->
+                        <div class="col-lg-4">
+                            <div class="project-info-card">
+                                <h3 class="info-card-title">Project Information</h3>
+                                <div class="info-item">
+                                    <span class="info-label">Client:</span>
+                                    <span class="info-value">Private Residence</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Location:</span>
+                                    <span class="info-value">Perth, Australia</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Area:</span>
+                                    <span class="info-value">4,500 sq ft</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Duration:</span>
+                                    <span class="info-value">18 months</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Budget:</span>
+                                    <span class="info-value">$2.5M</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Status:</span>
+                                    <span class="info-value">Completed</span>
+                                </div>
+                            </div>
+
+                            <div class="project-info-card">
+                                <h3 class="info-card-title">Key Features</h3>
+                                <ul class="features-list">
+                                    <li>Sustainable design principles</li>
+                                    <li>Smart home automation</li>
+                                    <li>Energy-efficient systems</li>
+                                    <li>Premium material selection</li>
+                                    <li>Landscape integration</li>
+                                    <li>Custom interior design</li>
+                                    <li>Modern security systems</li>
+                                    <li>Eco-friendly construction</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- PROJECT DESCRIPTION -->
+                        <div class="col-lg-8">
+                            <div class="project-info-card">
+                                <h3 class="info-card-title">Project Overview</h3>
+                                <div class="description-content">
+                                    <p>This luxury villa represents the pinnacle of modern architectural design, seamlessly blending contemporary aesthetics with functional living spaces. Located in the prestigious hills of Perth, this residence showcases our commitment to creating homes that are both visually stunning and environmentally conscious.</p>
+                                    
+                                    <p>The design philosophy centered around maximizing natural light while maintaining privacy, incorporating large floor-to-ceiling windows strategically positioned to capture breathtaking views of the surrounding landscape. The open-plan layout creates a sense of spaciousness while maintaining distinct zones for different activities.</p>
+                                    
+                                    <p>Sustainability was a key consideration throughout the design process. We implemented solar panels, rainwater harvesting systems, and energy-efficient HVAC systems to minimize the environmental footprint. The material palette features locally sourced stone, sustainable timber, and recycled steel elements.</p>
+                                    
+                                    <p>The interior design complements the architectural vision with custom-designed furniture, carefully curated art pieces, and a neutral color scheme that allows the natural beauty of the materials to shine through. Smart home technology has been seamlessly integrated to provide convenience while maintaining the clean aesthetic lines.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PROJECT TIMELINE -->
+            <section class="project-description">
+                <div class="container">
+                    <div class="section-title text-center mb-5">
+                        <h2 class="title-1">Project Timeline</h2>
+                        <p class="subtitle">From concept to completion</p>
+                    </div>
+                    
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <div class="timeline-date">January 2022</div>
+                                <h4>Initial Consultation & Site Analysis</h4>
+                                <p>Met with clients to understand their vision and conducted comprehensive site analysis.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <div class="timeline-date">March 2022</div>
+                                <h4>Design Development</h4>
+                                <p>Created initial design concepts and 3D visualizations for client approval.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <div class="timeline-date">June 2022</div>
+                                <h4>Permits & Documentation</h4>
+                                <p>Obtained all necessary building permits and finalized construction documentation.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <div class="timeline-date">August 2022</div>
+                                <h4>Construction Begins</h4>
+                                <p>Groundbreaking ceremony and commencement of foundation work.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <div class="timeline-date">February 2023</div>
+                                <h4>Interior Design Phase</h4>
+                                <p>Installation of custom fixtures, furniture, and final interior touches.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <div class="timeline-date">June 2023</div>
+                                <h4>Project Completion</h4>
+                                <p>Final inspections, client walkthrough, and project handover.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PROJECT GALLERY -->
+            <section class="project-gallery">
+                <div class="container">
+                    <div class="section-title text-center mb-5">
+                        <h2 class="title-1">Project Gallery</h2>
+                        <p class="subtitle">Explore the stunning details of this architectural masterpiece</p>
+                    </div>
+                    
+                    <div class="gallery-grid">
+    <div class="gallery-item" onclick="openImageModal('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80')">
+        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Modern Loft Concept">
+        <div class="gallery-overlay">
+            <i class="zmdi zmdi-zoom-in"></i>
+        </div>
+    </div>
+    
+    <div class="gallery-item" onclick="openImageModal('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80')">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Eco-friendly Villa">
+        <div class="gallery-overlay">
+            <i class="zmdi zmdi-zoom-in"></i>
+        </div>
+    </div>
+    
+    <div class="gallery-item" onclick="openImageModal('https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80')">
+        <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Mountain Retreat">
+        <div class="gallery-overlay">
+            <i class="zmdi zmdi-zoom-in"></i>
+        </div>
+    </div>
+    
+    <div class="gallery-item" onclick="openImageModal('https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80')">
+        <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Seaside Manor">
+        <div class="gallery-overlay">
+            <i class="zmdi zmdi-zoom-in"></i>
+        </div>
+    </div>
+    
+    <div class="gallery-item" onclick="openImageModal('https://images.unsplash.com/photo-1600585154526-990dced4db0d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80')">
+        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Urban Apartment Complex">
+        <div class="gallery-overlay">
+            <i class="zmdi zmdi-zoom-in"></i>
+        </div>
+    </div>
+    
+    <div class="gallery-item" onclick="openImageModal('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80')">
+        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Luxury Penthouse">
+        <div class="gallery-overlay">
+            <i class="zmdi zmdi-zoom-in"></i>
+        </div>
+    </div>
+
+    <div class="gallery-item" onclick="openImageModal('https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80')">
+        <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Skyline Tower">
+        <div class="gallery-overlay">
+            <i class="zmdi zmdi-zoom-in"></i>
+        </div>
+    </div>
+
+    <div class="gallery-item" onclick="openImageModal('https://images.unsplash.com/photo-1600573472550-8090b5e0745e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80')">
+        <img src="https://images.unsplash.com/photo-1600573472550-8090b5e0745e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Ocean View Resort">
+        <div class="gallery-overlay">
+            <i class="zmdi zmdi-zoom-in"></i>
+        </div>
+    </div>
+
+    <div class="gallery-item" onclick="openImageModal('https://images.unsplash.com/photo-1600210492493-0946911123ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80')">
+        <img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=\`\`\`
+photo-1600210492493-0946911123ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Modern City Office">
+        <div class="gallery-overlay">
+            <i class="zmdi zmdi-zoom-in"></i>
+        </div>
+    </div>
+
+    <div class="gallery-item" onclick="openImageModal('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80')">
+        <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Green Valley Homes">
+        <div class="gallery-overlay">
+            <i class="zmdi zmdi-zoom-in"></i>
+        </div>
+    </div>
+
+    <div class="gallery-item" onclick="openImageModal('https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80')">
+        <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Downtown Revival">
+        <div class="gallery-overlay">
+            <i class="zmdi zmdi-zoom-in"></i>
+        </div>
+    </div>
+
+    <div class="gallery-item" onclick="openImageModal('https://images.unsplash.com/photo-1600047509782-20d39509f26d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80')">
+        <img src="https://images.unsplash.com/photo-1600047509782-20d39509f26d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Historic Restoration">
+        <div class="gallery-overlay">
+            <i class="zmdi zmdi-zoom-in"></i>
+        </div>
+    </div>
+</div>
+                </div>
+            </section>
+        </main>
+        <!-- END MAIN-->
+
+        <!-- FOOTER-->
+        <footer class="footer bg-parallax">
+            <div class="bg-overlay bg-overlay--p85"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="footer-col">
+                            <div class="widget m-b-25">
+                                <a href="#">
+                                    <img src="images/icon/logo-white.png" alt="New Bharath Craft Interiors" />
                                 </a>
                             </div>
-                            <div class="header__content-right">
-                                <nav class="header-nav-menu">
-                                    <ul class="menu nav-menu">
-                                        <li class="menu-item menu-item-has-children">
-                                            <a href="index.html">Home</a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="works.html">Our Works</a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="contact.html">contact</a>
-                                        </li>
-                                    </ul>
-                                </nav>
-                                <div class="header-social">
-                                    <ul class="list-social">
-                                        <li class="list-social__item">
-                                            <a class="ic-fb" href="#">
-                                                <i class="zmdi zmdi-facebook"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-social__item">
-                                            <a class="ic-insta" href="#">
-                                                <i class="zmdi zmdi-instagram"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
+                            <div class="widget widget-address">
+                                <ul>
+                                    <li>Address : 991 White St . Dawsonville, GA 30534 , New York</li>
+                                    <li>Phone number : + (898) 784-7217</li>
+                                    <li>Email : Tatee.architecture@gmail.com</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6">
+                        <div class="footer-col p-l-70 p-md-l-0">
+                            <div class="widget widget_pages">
+                                <h4 class="widget-title">Link</h4>
+                                <ul>
+                                    <li><a href="#">About us</a></li>
+                                    <li><a href="#">Services</a></li>
+                                    <li><a href="#">Contact</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-col p-l-70 p-md-l-0">
+                            <h4 class="widget-title">Social</h4>
+                            <div class="widget widget_socials">
+                                <ul class="list-social list-social-2">
+                                    <li class="list-social__item">
+                                        <a class="ic-fb" href="#"><i class="zmdi zmdi-facebook"></i></a>
+                                    </li>
+                                    <li class="list-social__item">
+                                        <a class="ic-insta" href="#"><i class="zmdi zmdi-instagram"></i></a>
+                                    </li>
+                                    <li class="list-social__item">
+                                        <a class="ic-twi" href="#"><i class="zmdi zmdi-twitter"></i></a>
+                                    </li>
+                                    <li class="list-social__item">
+                                        <a class="ic-pinterest" href="#"><i class="zmdi zmdi-pinterest"></i></a>
+                                    </li>
+                                    <li class="list-social__item">
+                                        <a class="ic-google" href="#"><i class="zmdi zmdi-google"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-col">
+                            <div class="widget widget_text">
+                                <h4 class="widget-title">copyright</h4>
+                                <p>© 2018 TATEE . Designed by Authemes</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="header-mobile d-block d-lg-none">
-            <div class="header-mobile__bar">
-                <div class="container-fluid">
-                    <div class="header-mobile__bar-inner">
-                        <a class="logo" href="index.html">
-                            <img src="images/logo.png" alt="Tatee" />
-                        </a>
-                        <button class="hamburger hamburger--slider float-right" type="button">
-                            <span class="hamburger-box">
-                                <span class="hamburger-inner"></span>
-                            </span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <nav class="header-nav-menu-mobile">
-                <div class="container-fluid">
-                    <ul class="menu nav-menu menu-mobile">
-                        <li class="menu-item menu-item-has-children">
-                            <a href="index.html">Home</a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="works.html">Our Works</a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="contact.html">contact</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
-    </header>
-    <!-- END HEADER-->
+        </footer>
+        <!-- END FOOTER-->
+    </div>
 
-    <!-- PROJECTS SECTION -->
-    <section class="arch-projects-wrapper">
-        <div class="arch-section-title">
-            <h2 class="arch-title-1">our work</h2>
-            <p class="arch-subtitle">Exceptional architectural projects crafted with precision and vision</p>
-        </div>
-        <div class="arch-container">
-            <!-- Project Tabs Navigation -->
-            <div class="arch-project-category-tabs">
-                <ul class="nav nav-tabs arch-project-tabs-nav" role="tablist">
-                    <li class="nav-item">
-                        <a class="nav-link active" id="arch-project-pending-tab" data-toggle="tab" href="#arch-project-pending-content" role="tab" aria-controls="arch-project-pending-content" aria-selected="true">Pending Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="arch-project-ongoing-tab" data-toggle="tab" href="#arch-project-ongoing-content" role="tab" aria-controls="arch-project-ongoing-content" aria-selected="false">Ongoing Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="arch-project-completed-tab" data-toggle="tab" href="#arch-project-completed-content" role="tab" aria-controls="arch-project-completed-content" aria-selected="false">Completed Projects</a>
-                    </li>
-                </ul>
-            </div>
-            
-            <!-- Tab Content -->
-            <div class="tab-content arch-project-tabs-content">
-                <!-- Pending Projects Tab -->
-                <div class="tab-pane fade show active" id="arch-project-pending-content" role="tabpanel" aria-labelledby="arch-project-pending-tab">
-                    <div class="arch-projects-grid">
-                        <article class="arch-project-card" onclick="redirectToDetails()">
-                            <div class="arch-project-image">
-                                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Modern Loft Concept" />
-                                <div class="arch-project-overlay">
-                                    <button class="view-project-btn">View Project</button>
-                                </div>
-                            </div>
-                            <div class="arch-project-content">
-                                <h3 class="arch-project-title">Modern Loft Concept</h3>
-                                <div class="arch-project-location">
-                                    <span class="arch-location-icon"></span>
-                                    Perth, Australia
-                                </div>
-                                <div class="arch-project-status arch-pending-status">Pending Approval</div>
-                            </div>
-                        </article>
-                        
-                        <article class="arch-project-card" onclick="redirectToDetails()">
-                            <div class="arch-project-image">
-                                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Eco-friendly Villa" />
-                                <div class="arch-project-overlay">
-                                    <button class="view-project-btn">View Project</button>
-                                </div>
-                            </div>
-                            <div class="arch-project-content">
-                                <h3 class="arch-project-title">Eco-friendly Villa</h3>
-                                <div class="arch-project-location">
-                                    <span class="arch-location-icon"></span>
-                                    New York, USA
-                                </div>
-                                <div class="arch-project-status arch-pending-status">Planning Stage</div>
-                            </div>
-                        </article>
-                        
-                        <article class="arch-project-card" onclick="redirectToDetails()">
-                            <div class="arch-project-image">
-                                <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Mountain Retreat" />
-                                <div class="arch-project-overlay">
-                                    <button class="view-project-btn">View Project</button>
-                                </div>
-                            </div>
-                            <div class="arch-project-content">
-                                <h3 class="arch-project-title">Mountain Retreat</h3>
-                                <div class="arch-project-location">
-                                    <span class="arch-location-icon"></span>
-                                    Colorado, USA
-                                </div>
-                                <div class="arch-project-status arch-pending-status">Funding Stage</div>
-                            </div>
-                        </article>
-                        
-                        <article class="arch-project-card" onclick="redirectToDetails()">
-                            <div class="arch-project-image">
-                                <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Seaside Manor" />
-                                <div class="arch-project-overlay">
-                                    <button class="view-project-btn">View Project</button>
-                                </div>
-                            </div>
-                            <div class="arch-project-content">
-                                <h3 class="arch-project-title">Seaside Manor</h3>
-                                <div class="arch-project-location">
-                                    <span class="arch-location-icon"></span>
-                                    Malibu, USA
-                                </div>
-                                <div class="arch-project-status arch-pending-status">Design Phase</div>
-                            </div>
-                        </article>
-                        
-                        <article class="arch-project-card" onclick="redirectToDetails()">
-                            <div class="arch-project-image">
-                                <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Urban Apartment Complex" />
-                                <div class="arch-project-overlay">
-                                    <button class="view-project-btn">View Project</button>
-                                </div>
-                            </div>
-                            <div class="arch-project-content">
-                                <h3 class="arch-project-title">Urban Apartment Complex</h3>
-                                <div class="arch-project-location">
-                                    <span class="arch-location-icon"></span>
-                                    London, UK
-                                </div>
-                                <div class="arch-project-status arch-pending-status">Permit Pending</div>
-                            </div>
-                        </article>
-                        
-                        <article class="arch-project-card" onclick="redirectToDetails()">
-                            <div class="arch-project-image">
-                                <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Luxury Penthouse" />
-                                <div class="arch-project-overlay">
-                                    <button class="view-project-btn">View Project</button>
-                                </div>
-                            </div>
-                            <div class="arch-project-content">
-                                <h3 class="arch-project-title">Luxury Penthouse</h3>
-                                <div class="arch-project-location">
-                                    <span class="arch-location-icon"></span>
-                                    Miami, USA
-                                </div>
-                                <div class="arch-project-status arch-pending-status">Client Review</div>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-                
-                <!-- Ongoing Projects Tab -->
-                <div class="tab-pane fade" id="arch-project-ongoing-content" role="tabpanel" aria-labelledby="arch-project-ongoing-tab">
-                    <div class="arch-projects-grid">
-                        <article class="arch-project-card" onclick="redirectToDetails()">
-                            <div class="arch-project-image">
-                                <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Skyline Tower" />
-                                <div class="arch-project-overlay">
-                                    <button class="view-project-btn">View Project</button>
-                                </div>
-                            </div>
-                            <div class="arch-project-content">
-                                <h3 class="arch-project-title">Skyline Tower</h3>
-                                <div class="arch-project-location">
-                                    <span class="arch-location-icon"></span>
-                                    Michigan, USA
-                                </div>
-                                <div class="arch-project-status arch-ongoing-status">Construction 50%</div>
-                            </div>
-                        </article>
-                        
-                        <article class="arch-project-card" onclick="redirectToDetails()">
-                            <div class="arch-project-image">
-                                <img src="https://images.unsplash.com/photo-1600573472550-8090b5e0745e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Ocean View Resort" />
-                                <div class="arch-project-overlay">
-                                    <button class="view-project-btn">View Project</button>
-                                </div>
-                            </div>
-                            <div class="arch-project-content">
-                                <h3 class="arch-project-title">Ocean View Resort</h3>
-                                <div class="arch-project-location">
-                                    <span class="arch-location-icon"></span>
-                                    Cancun, Mexico
-                                </div>
-                                <div class="arch-project-status arch-ongoing-status">Construction 75%</div>
-                            </div>
-                        </article>
-                        
-                        <article class="arch-project-card" onclick="redirectToDetails()">
-                            <div class="arch-project-image">
-                                <img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Modern City Office" />
-                                <div class="arch-project-overlay">
-                                    <button class="view-project-btn">View Project</button>
-                                </div>
-                            </div>
-                            <div class="arch-project-content">
-                                <h3 class="arch-project-title">Modern City Office</h3>
-                                <div class="arch-project-location">
-                                    <span class="arch-location-icon"></span>
-                                    Tokyo, Japan
-                                </div>
-                                <div class="arch-project-status arch-ongoing-status">Interior Work 30%</div>
-                            </div>
-                        </article>
-                        
-                        <article class="arch-project-card" onclick="redirectToDetails()">
-                            <div class="arch-project-image">
-                                <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Green Valley Homes" />
-                                <div class="arch-project-overlay">
-                                    <button class="view-project-btn">View Project</button>
-                                </div>
-                            </div>
-                            <div class="arch-project-content">
-                                <h3 class="arch-project-title">Green Valley Homes</h3>
-                                <div class="arch-project-location">
-                                    <span class="arch-location-icon"></span>
-                                    Vancouver, Canada
-                                </div>
-                                <div class="arch-project-status arch-ongoing-status">Foundation Complete</div>
-                            </div>
-                        </article>
-                        
-                        <article class="arch-project-card" onclick="redirectToDetails()">
-                            <div class="arch-project-image">
-                                <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Downtown Revival" />
-                                <div class="arch-project-overlay">
-                                    <button class="view-project-btn">View Project</button>
-                                </div>
-                            </div>
-                            <div class="arch-project-content">
-                                <h3 class="arch-project-title">Downtown Revival</h3>
-                                <div class="arch-project-location">
-                                    <span class="arch-location-icon"></span>
-                                    Chicago, USA
-                                </div>
-                                <div class="arch-project-status arch-ongoing-status">Structural Work 65%</div>
-                            </div>
-                        </article>
-                        
-                        <article class="arch-project-card" onclick="redirectToDetails()">
-                            <div class="arch-project-image">
-                                <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Industrial Conversion" />
-                                <div class="arch-project-overlay">
-                                    <button class="view-project-btn">View Project</button>
-                                </div>
-                            </div>
-                            <div class="arch-project-content">
-                                <h3 class="arch-project-title">Industrial Conversion</h3>
-                                <div class="arch-project-location">
-                                    <span class="arch-location-icon"></span>
-                                    Berlin, Germany
-                                </div>
-                                <div class="arch-project-status arch-ongoing-status">Exterior Work 40%</div>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-                
-                <!-- Completed Projects Tab -->
-                <div class="tab-pane fade" id="arch-project-completed-content" role="tabpanel" aria-labelledby="arch-project-completed-tab">
-                    <div class="arch-projects-grid">
-                        <article class="arch-project-card" onclick="redirectToDetails()">
-                            <div class="arch-project-image">
-                                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Lakeside Residences" />
-                                <div class="arch-project-overlay">
-                                    <button class="view-project-btn">View Project</button>
-                                </div>
-                            </div>
-                            <div class="arch-project-content">
-                                <h3 class="arch-project-title">Lakeside Residences</h3>
-                                <div class="arch-project-location">
-                                    <span class="arch-location-icon"></span>
-                                    Geneva, Switzerland
-                                </div>
-                                <div class="arch-project-status arch-completed-status">Completed 2023</div>
-                            </div>
-                        </article>
-                        
-                        <article class="arch-project-card" onclick="redirectToDetails()">
-                            <div class="arch-project-image">
-                                <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Downtown Plaza" />
-                                <div class="arch-project-overlay">
-                                    <button class="view-project-btn">View Project</button>
-                                </div>
-                            </div>
-                            <div class="arch-project-content">
-                                <h3 class="arch-project-title">Downtown Plaza</h3>
-                                <div class="arch-project-location">
-                                    <span class="arch-location-icon"></span>
-                                    Los Angeles, USA
-                                </div>
-                                <div class="arch-project-status arch-completed-status">Completed 2022</div>
-                            </div>
-                        </article>
-                        
-                        <article class="arch-project-card" onclick="redirectToDetails()">
-                            <div class="arch-project-image">
-                                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Desert Oasis Hotel" />
-                                <div class="arch-project-overlay">
-                                    <button class="view-project-btn">View Project</button>
-                                </div>
-                            </div>
-                            <div class="arch-project-content">
-                                <h3 class="arch-project-title">Desert Oasis Hotel</h3>
-                                <div class="arch-project-location">
-                                    <span class="arch-location-icon"></span>
-                                    Dubai, UAE
-                                </div>
-                                <div class="arch-project-status arch-completed-status">Completed 2021</div>
-                            </div>
-                        </article>
-                        
-                        <article class="arch-project-card" onclick="redirectToDetails()">
-                            <div class="arch-project-image">
-                                <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="River View Apartments" />
-                                <div class="arch-project-overlay">
-                                    <button class="view-project-btn">View Project</button>
-                                </div>
-                            </div>
-                            <div class="arch-project-content">
-                                <h3 class="arch-project-title">River View Apartments</h3>
-                                <div class="arch-project-location">
-                                    <span class="arch-location-icon"></span>
-                                    Paris, France
-                                </div>
-                                <div class="arch-project-status arch-completed-status">Completed 2023</div>
-                            </div>
-                        </article>
-                        
-                        <article class="arch-project-card" onclick="redirectToDetails()">
-                            <div class="arch-project-image">
-                                <img src="https://images.unsplash.com/photo-1600047509782-20d39509f26d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Historic Restoration" />
-                                <div class="arch-project-overlay">
-                                    <button class="view-project-btn">View Project</button>
-                                </div>
-                            </div>
-                            <div class="arch-project-content">
-                                <h3 class="arch-project-title">Historic Restoration</h3>
-                                <div class="arch-project-location">
-                                    <span class="arch-location-icon"></span>
-                                    Boston, USA
-                                </div>
-                                <div class="arch-project-status arch-completed-status">Completed 2020</div>
-                            </div>
-                        </article>
-                        
-                        <article class="arch-project-card" onclick="redirectToDetails()">
-                            <div class="arch-project-image">
-                                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Garden Heights Complex" />
-                                <div class="arch-project-overlay">
-                                    <button class="view-project-btn">View Project</button>
-                                </div>
-                            </div>
-                            <div class="arch-project-content">
-                                <h3 class="arch-project-title">Garden Heights Complex</h3>
-                                <div class="arch-project-location">
-                                    <span class="arch-location-icon"></span>
-                                    Singapore
-                                </div>
-                                <div class="arch-project-status arch-completed-status">Completed 2022</div>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER-->
-    <footer class="footer bg-parallax">
-        <div class="bg-overlay bg-overlay--p85"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="footer-col">
-                        <div class="widget m-b-25">
-                            <a href="#">
-                                <img src="images/icon/logo-white.png" alt="Tatee" />
-                            </a>
-                        </div>
-                        <div class="widget widget-address">
-                            <ul>
-                                <li>Address : 991 White St . Dawsonville, GA 30534 , New York</li>
-                                <li>Phone number : + (898) 784-7217</li>
-                                <li>Email : Tatee.architecture@gmail.com</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-6">
-                    <div class="footer-col p-l-70 p-md-l-0">
-                        <div class="widget widget_pages">
-                            <h4 class="widget-title">Link</h4>
-                            <ul>
-                                <li><a href="#">About us</a></li>
-                                <li><a href="#">Services</a></li>
-                                <li><a href="#">Contact</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="footer-col p-l-70 p-md-l-0">
-                        <h4 class="widget-title">Social</h4>
-                        <div class="widget widget_socials">
-                            <ul class="list-social list-social-2">
-                                <li class="list-social__item">
-                                    <a class="ic-fb" href="#"><i class="zmdi zmdi-facebook"></i></a>
-                                </li>
-                                <li class="list-social__item">
-                                    <a class="ic-insta" href="#"><i class="zmdi zmdi-instagram"></i></a>
-                                </li>
-                                <li class="list-social__item">
-                                    <a class="ic-twi" href="#"><i class="zmdi zmdi-twitter"></i></a>
-                                </li>
-                                <li class="list-social__item">
-                                    <a class="ic-pinterest" href="#"><i class="zmdi zmdi-pinterest"></i></a>
-                                </li>
-                                <li class="list-social__item">
-                                    <a class="ic-google" href="#"><i class="zmdi zmdi-google"></i></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="footer-col">
-                        <div class="widget widget_text">
-                            <h4 class="widget-title">copyright</h4>
-                            <p>© 2018 TATEE . Designed by Authemes</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- END FOOTER-->
+    <!-- Image Modal -->
+    <div id="imageModal" class="image-modal">
+        <span class="modal-close" onclick="closeImageModal()">&times;</span>
+        <img class="modal-image" id="modalImage" src="/placeholder.svg" alt="Project Image">
+    </div>
 
     <!-- JavaScript -->
-    <script src="js/extra.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     
@@ -679,71 +827,6 @@
     <script src="js/global.js"></script>
 
     <script>
-        // Function to redirect to details page
-        function redirectToDetails() {
-            window.location.href = 'details.html';
-        }
-
-        // Prevent event bubbling for button clicks
-        document.addEventListener('DOMContentLoaded', function() {
-            const viewButtons = document.querySelectorAll('.view-project-btn');
-            viewButtons.forEach(button => {
-                button.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                    redirectToDetails();
-                });
-            });
-        });
-
-        // Video modal functions
-        function openVideoModal(videoSrc, title, description) {
-            document.getElementById('modalVideo').src = videoSrc;
-            document.getElementById('modalTitle').innerText = title;
-            document.getElementById('modalDescription').innerText = description;
-            document.getElementById('videoModal').style.display = 'flex';
-        }
-
-        function closeVideoModal() {
-            document.getElementById('videoModal').style.display = 'none';
-            document.getElementById('modalVideo').pause();
-        }
-
-        // Founder modal functions
-        function openFounderModal() {
-            document.getElementById('founderModal').style.display = 'flex';
-        }
-
-        function closeFounderModal() {
-            document.getElementById('founderModal').style.display = 'none';
-        }
-
-        // Close founder modal when clicking outside it
-        window.onclick = function(event) {
-            const modal = document.getElementById('founderModal');
-            if (event.target === modal) {
-                closeFounderModal();
-            }
-        }
-
-        // Slider initialization
-        $(document).ready(function(){
-            $('.slider').slick({
-                slidesToShow: 3,
-                slidesToScroll: 1,
-                arrows: true,
-                dots: true,
-                infinite: false,
-                responsive: [
-                    {
-                        breakpoint: 768,
-                        settings: {
-                            slidesToShow: 1
-                        }
-                    }
-                ]
-            });
-        });
-
         // Header scroll effect
         window.addEventListener('scroll', function() {
             const header = document.getElementById('header');
@@ -759,6 +842,30 @@
         document.addEventListener('DOMContentLoaded', function() {
             const header = document.getElementById('header');
             header.classList.remove('scrolled');
+        });
+
+        // Image modal functions
+        function openImageModal(imageSrc) {
+            document.getElementById('modalImage').src = imageSrc;
+            document.getElementById('imageModal').style.display = 'flex';
+        }
+
+        function closeImageModal() {
+            document.getElementById('imageModal').style.display = 'none';
+        }
+
+        // Close modal when clicking outside the image
+        document.getElementById('imageModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeImageModal();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeImageModal();
+            }
         });
     </script>
 </body>
