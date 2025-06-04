@@ -18,7 +18,6 @@
     <link href="vendor/themify-font/themify-icons.css" rel="stylesheet" media="all">
     <!-- Base fonts of theme-->
     <link href="css/poppins-font.min.css" rel="stylesheet" media="all">
-    <!-- Font special for pages-->
 
     <!-- Bootstrap CSS-->
     <link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
@@ -36,8 +35,9 @@
     <!-- Main CSS-->
     <link href="css/main.min.css" rel="stylesheet" media="all">
     <link href="css/style.css" rel="stylesheet" media="all">
-        <link href="css/edit.css" rel="stylesheet" media="all">
-<link rel="stylesheet" href="css/extra.css">
+    <link href="css/edit.css" rel="stylesheet" media="all">
+    <link rel="stylesheet" href="css/extra.css">
+    
     <!--Favicons-->
     <link rel="shortcut icon" href="images/icon/favicon.jpg">
     <link rel="apple-touch-icon" href="apple-icon.png">
@@ -46,556 +46,613 @@
 
     <style>
     .au-rev-arrow-1.tp-leftarrow, .au-rev-arrow-2.tp-leftarrow, .au-rev-arrow-3.tp-leftarrow, .au-rev-arrow-4.tp-leftarrow {
-    margin-left: 20px !important;
-    margin-top: -20px;
+        margin-left: 20px !important;
+        margin-top: -20px;
     }
     .au-rev-arrow-1.tp-rightarrow, .au-rev-arrow-2.tp-rightarrow, .au-rev-arrow-3.tp-rightarrow, .au-rev-arrow-4.tp-rightarrow {
-    margin-right: 20px !important;
-    margin-top: -20px;
+        margin-right: 20px !important;
+        margin-top: -20px;
+    }
+
+    /* Enhanced Project Card Hover Styles */
+    .arch-project-card {
+        position: relative;
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+    }
+
+    .arch-project-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    }
+
+    .arch-project-image {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .arch-project-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(45deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2;
+    }
+
+    .arch-project-card:hover .arch-project-overlay {
+        opacity: 1;
+    }
+
+    .view-project-btn {
+        background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        border-radius: 25px;
+        font-weight: 600;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transform: translateY(20px);
+        opacity: 0;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+    }
+
+    .arch-project-card:hover .view-project-btn {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    .view-project-btn:hover {
+        background: linear-gradient(45deg, #ee5a24, #ff6b6b);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+    }
+
+    .arch-project-image img {
+        transition: transform 0.3s ease;
+    }
+
+    .arch-project-card:hover .arch-project-image img {
+        transform: scale(1.05);
+    }
+
+    /* Additional hover effects for project content */
+    .arch-project-content {
+        transition: all 0.3s ease;
+    }
+
+    .arch-project-card:hover .arch-project-content {
+        background: rgba(255, 255, 255, 0.95);
+    }
+
+    .arch-project-title {
+        transition: color 0.3s ease;
+    }
+
+    .arch-project-card:hover .arch-project-title {
+        color: #ff6b6b;
     }
     </style>
 </head>
+
 <body>
-       <!-- HEADER-->
-        <header id="header">
-            <div class="header header-1 d-none d-lg-block js-header-1">
-                <div class="header__bar">
-                    <div class="wrap wrap--w1790">
-                        <div class="container-fluid">
-                            <div class="header__content">
-                                <div class="logo">
-                                    <a href="index.html">
-                                        <img src="images/logo.png" alt="Tatee" />
-                                    </a>
-                                </div>
-                                <div class="header__content-right">
-                                    <nav class="header-nav-menu">
-                                        <ul class="menu nav-menu">
-                                            <li class="menu-item menu-item-has-children">
-                                                <a href="index.html">Home</a>
-                                            </li>
-                                            <li class="menu-item">
-                                                  <a href="works.html">Our Works</a>
-                                            </li>
-                                            <li class="menu-item">
-                                                <a href="contact.html">contact</a>
-                                            </li>
-                                        </ul>
-                                    </nav>
-                                    <div class="header-social">
-                                        <ul class="list-social">
-                                            <li class="list-social__item">
-                                                <a class="ic-fb" href="#">
-                                                    <i class="zmdi zmdi-facebook"></i>
-                                                </a>
-                                            </li>
-                                            <li class="list-social__item">
-                                                <a class="ic-insta" href="#">
-                                                    <i class="zmdi zmdi-instagram"></i>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="header-mobile d-block d-lg-none">
-                <div class="header-mobile__bar">
+    <!-- HEADER-->
+    <header id="header">
+        <div class="header header-1 d-none d-lg-block js-header-1">
+            <div class="header__bar">
+                <div class="wrap wrap--w1790">
                     <div class="container-fluid">
-                        <div class="header-mobile__bar-inner">
-                            <a class="logo" href="index.html">
-                                <img src="images/logo.png" alt="Tatee" />
-                            </a>
-                            <button class="hamburger hamburger--slider float-right" type="button">
-                                <span class="hamburger-box">
-                                    <span class="hamburger-inner"></span>
-                                </span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <nav class="header-nav-menu-mobile">
-                    <div class="container-fluid">
-                        <ul class="menu nav-menu menu-mobile">
-                            <li class="menu-item menu-item-has-children">
-                                <a href="index.html">Home</a>
-                                
-                            </li>
-                            <li class="menu-item">
-                                <a href="works.html">Our Works</a>
-                            </li>
-                            
-                            
-                            <li class="menu-item">
-                                <a href="contact.html">contact</a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-        </header>
-        <!-- END HEADER-->
-  <!-- PROJECTS SECTION -->
-<section class="arch-projects-wrapper">
-    <div class="arch-section-title">
-        <h2 class="arch-title-1">our work</h2>
-        <p class="arch-subtitle">Exceptional architectural projects crafted with precision and vision</p>
-    </div>
-    <div class="arch-container">
-        <!-- Project Tabs Navigation -->
-        <div class="arch-project-category-tabs">
-            <ul class="nav nav-tabs arch-project-tabs-nav" role="tablist">
-                <li class="nav-item">
-                    <a class="nav-link active" id="arch-project-pending-tab" data-toggle="tab" href="#arch-project-pending-content" role="tab" aria-controls="arch-project-pending-content" aria-selected="true">Pending Projects</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="arch-project-ongoing-tab" data-toggle="tab" href="#arch-project-ongoing-content" role="tab" aria-controls="arch-project-ongoing-content" aria-selected="false">Ongoing Projects</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="arch-project-completed-tab" data-toggle="tab" href="#arch-project-completed-content" role="tab" aria-controls="arch-project-completed-content" aria-selected="false">Completed Projects</a>
-                </li>
-            </ul>
-        </div>
-        
-        <!-- Tab Content -->
-        <div class="tab-content arch-project-tabs-content">
-            <!-- Pending Projects Tab -->
-            <div class="tab-pane fade show active" id="arch-project-pending-content" role="tabpanel" aria-labelledby="arch-project-pending-tab">
-                <div class="arch-projects-grid">
-                    <article class="arch-project-card">
-                        <div class="arch-project-image">
-                            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Modern Loft Concept" />
-                            <div class="arch-project-overlay"></div>
-                        </div>
-                        <div class="arch-project-content">
-                            <h3 class="arch-project-title">Modern Loft Concept</h3>
-                            <div class="arch-project-location">
-                                <span class="arch-location-icon"></span>
-                                Perth, Australia
-                            </div>
-                            <div class="arch-project-status arch-pending-status">Pending Approval</div>
-                        </div>
-                    </article>
-                    
-                    <article class="arch-project-card">
-                        <div class="arch-project-image">
-                            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Eco-friendly Villa" />
-                            <div class="arch-project-overlay"></div>
-                        </div>
-                        <div class="arch-project-content">
-                            <h3 class="arch-project-title">Eco-friendly Villa</h3>
-                            <div class="arch-project-location">
-                                <span class="arch-location-icon"></span>
-                                New York, USA
-                            </div>
-                            <div class="arch-project-status arch-pending-status">Planning Stage</div>
-                        </div>
-                    </article>
-                    
-                    <article class="arch-project-card">
-                        <div class="arch-project-image">
-                            <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Mountain Retreat" />
-                            <div class="arch-project-overlay"></div>
-                        </div>
-                        <div class="arch-project-content">
-                            <h3 class="arch-project-title">Mountain Retreat</h3>
-                            <div class="arch-project-location">
-                                <span class="arch-location-icon"></span>
-                                Colorado, USA
-                            </div>
-                            <div class="arch-project-status arch-pending-status">Funding Stage</div>
-                        </div>
-                    </article>
-                    
-                    <article class="arch-project-card">
-                        <div class="arch-project-image">
-                            <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Seaside Manor" />
-                            <div class="arch-project-overlay"></div>
-                        </div>
-                        <div class="arch-project-content">
-                            <h3 class="arch-project-title">Seaside Manor</h3>
-                            <div class="arch-project-location">
-                                <span class="arch-location-icon"></span>
-                                Malibu, USA
-                            </div>
-                            <div class="arch-project-status arch-pending-status">Design Phase</div>
-                        </div>
-                    </article>
-                    
-                    <article class="arch-project-card">
-                        <div class="arch-project-image">
-                            <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Urban Apartment Complex" />
-                            <div class="arch-project-overlay"></div>
-                        </div>
-                        <div class="arch-project-content">
-                            <h3 class="arch-project-title">Urban Apartment Complex</h3>
-                            <div class="arch-project-location">
-                                <span class="arch-location-icon"></span>
-                                London, UK
-                            </div>
-                            <div class="arch-project-status arch-pending-status">Permit Pending</div>
-                        </div>
-                    </article>
-                    
-                    <article class="arch-project-card">
-                        <div class="arch-project-image">
-                            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Luxury Penthouse" />
-                            <div class="arch-project-overlay"></div>
-                        </div>
-                        <div class="arch-project-content">
-                            <h3 class="arch-project-title">Luxury Penthouse</h3>
-                            <div class="arch-project-location">
-                                <span class="arch-location-icon"></span>
-                                Miami, USA
-                            </div>
-                            <div class="arch-project-status arch-pending-status">Client Review</div>
-                        </div>
-                    </article>
-                </div>
-            </div>
-            
-            <!-- Ongoing Projects Tab -->
-            <div class="tab-pane fade" id="arch-project-ongoing-content" role="tabpanel" aria-labelledby="arch-project-ongoing-tab">
-                <div class="arch-projects-grid">
-                    <article class="arch-project-card">
-                        <div class="arch-project-image">
-                            <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Skyline Tower" />
-                            <div class="arch-project-overlay"></div>
-                        </div>
-                        <div class="arch-project-content">
-                            <h3 class="arch-project-title">Skyline Tower</h3>
-                            <div class="arch-project-location">
-                                <span class="arch-location-icon"></span>
-                                Michigan, USA
-                            </div>
-                            <div class="arch-project-status arch-ongoing-status">Construction 50%</div>
-                        </div>
-                    </article>
-                    
-                    <article class="arch-project-card">
-                        <div class="arch-project-image">
-                            <img src="https://images.unsplash.com/photo-1600573472550-8090b5e0745e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Ocean View Resort" />
-                            <div class="arch-project-overlay"></div>
-                        </div>
-                        <div class="arch-project-content">
-                            <h3 class="arch-project-title">Ocean View Resort</h3>
-                            <div class="arch-project-location">
-                                <span class="arch-location-icon"></span>
-                                Cancun, Mexico
-                            </div>
-                            <div class="arch-project-status arch-ongoing-status">Construction 75%</div>
-                        </div>
-                    </article>
-                    
-                    <article class="arch-project-card">
-                        <div class="arch-project-image">
-                            <img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Modern City Office" />
-                            <div class="arch-project-overlay"></div>
-                        </div>
-                        <div class="arch-project-content">
-                            <h3 class="arch-project-title">Modern City Office</h3>
-                            <div class="arch-project-location">
-                                <span class="arch-location-icon"></span>
-                                Tokyo, Japan
-                            </div>
-                            <div class="arch-project-status arch-ongoing-status">Interior Work 30%</div>
-                        </div>
-                    </article>
-                    
-                    <article class="arch-project-card">
-                        <div class="arch-project-image">
-                            <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Green Valley Homes" />
-                            <div class="arch-project-overlay"></div>
-                        </div>
-                        <div class="arch-project-content">
-                            <h3 class="arch-project-title">Green Valley Homes</h3>
-                            <div class="arch-project-location">
-                                <span class="arch-location-icon"></span>
-                                Vancouver, Canada
-                            </div>
-                            <div class="arch-project-status arch-ongoing-status">Foundation Complete</div>
-                        </div>
-                    </article>
-                    
-                    <article class="arch-project-card">
-                        <div class="arch-project-image">
-                            <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Downtown Revival" />
-                            <div class="arch-project-overlay"></div>
-                        </div>
-                        <div class="arch-project-content">
-                            <h3 class="arch-project-title">Downtown Revival</h3>
-                            <div class="arch-project-location">
-                                <span class="arch-location-icon"></span>
-                                Chicago, USA
-                            </div>
-                            <div class="arch-project-status arch-ongoing-status">Structural Work 65%</div>
-                        </div>
-                    </article>
-                    
-                    <article class="arch-project-card">
-                        <div class="arch-project-image">
-                            <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Industrial Conversion" />
-                            <div class="arch-project-overlay"></div>
-                        </div>
-                        <div class="arch-project-content">
-                            <h3 class="arch-project-title">Industrial Conversion</h3>
-                            <div class="arch-project-location">
-                                <span class="arch-location-icon"></span>
-                                Berlin, Germany
-                            </div>
-                            <div class="arch-project-status arch-ongoing-status">Exterior Work 40%</div>
-                        </div>
-                    </article>
-                </div>
-            </div>
-            
-            <!-- Completed Projects Tab -->
-            <div class="tab-pane fade" id="arch-project-completed-content" role="tabpanel" aria-labelledby="arch-project-completed-tab">
-                <div class="arch-projects-grid">
-                    <article class="arch-project-card">
-                        <div class="arch-project-image">
-                            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Lakeside Residences" />
-                            <div class="arch-project-overlay"></div>
-                        </div>
-                        <div class="arch-project-content">
-                            <h3 class="arch-project-title">Lakeside Residences</h3>
-                            <div class="arch-project-location">
-                                <span class="arch-location-icon"></span>
-                                Geneva, Switzerland
-                            </div>
-                            <div class="arch-project-status arch-completed-status">Completed 2023</div>
-                        </div>
-                    </article>
-                    
-                    <article class="arch-project-card">
-                        <div class="arch-project-image">
-                            <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Downtown Plaza" />
-                            <div class="arch-project-overlay"></div>
-                        </div>
-                        <div class="arch-project-content">
-                            <h3 class="arch-project-title">Downtown Plaza</h3>
-                            <div class="arch-project-location">
-                                <span class="arch-location-icon"></span>
-                                Los Angeles, USA
-                            </div>
-                            <div class="arch-project-status arch-completed-status">Completed 2022</div>
-                        </div>
-                    </article>
-                    
-                    <article class="arch-project-card">
-                        <div class="arch-project-image">
-                            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Desert Oasis Hotel" />
-                            <div class="arch-project-overlay"></div>
-                        </div>
-                        <div class="arch-project-content">
-                            <h3 class="arch-project-title">Desert Oasis Hotel</h3>
-                            <div class="arch-project-location">
-                                <span class="arch-location-icon"></span>
-                                Dubai, UAE
-                            </div>
-                            <div class="arch-project-status arch-completed-status">Completed 2021</div>
-                        </div>
-                    </article>
-                    
-                    <article class="arch-project-card">
-                        <div class="arch-project-image">
-                            <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="River View Apartments" />
-                            <div class="arch-project-overlay"></div>
-                        </div>
-                        <div class="arch-project-content">
-                            <h3 class="arch-project-title">River View Apartments</h3>
-                            <div class="arch-project-location">
-                                <span class="arch-location-icon"></span>
-                                Paris, France
-                            </div>
-                            <div class="arch-project-status arch-completed-status">Completed 2023</div>
-                        </div>
-                    </article>
-                    
-                    <article class="arch-project-card">
-                        <div class="arch-project-image">
-                            <img src="https://images.unsplash.com/photo-1600047509782-20d39509f26d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Historic Restoration" />
-                            <div class="arch-project-overlay"></div>
-                        </div>
-                        <div class="arch-project-content">
-                            <h3 class="arch-project-title">Historic Restoration</h3>
-                            <div class="arch-project-location">
-                                <span class="arch-location-icon"></span>
-                                Boston, USA
-                            </div>
-                            <div class="arch-project-status arch-completed-status">Completed 2020</div>
-                        </div>
-                    </article>
-                    
-                    <article class="arch-project-card">
-                        <div class="arch-project-image">
-                            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Garden Heights Complex" />
-                            <div class="arch-project-overlay"></div>
-                        </div>
-                        <div class="arch-project-content">
-                            <h3 class="arch-project-title">Garden Heights Complex</h3>
-                            <div class="arch-project-location">
-                                <span class="arch-location-icon"></span>
-                                Singapore
-                            </div>
-                            <div class="arch-project-status arch-completed-status">Completed 2022</div>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-</section>
-
-   <!-- FOOTER-->
-        <footer class="footer bg-parallax">
-            <div class="bg-overlay bg-overlay--p85"></div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4 col-md-6">
-                        <div class="footer-col">
-                            <div class="widget m-b-25">
-                                <a href="#">
-                                    <img src="images/icon/logo-white.png" alt="Tatee" />
+                        <div class="header__content">
+                            <div class="logo">
+                                <a href="/index.html">
+                                    <img src="images/logo.png" alt="Tatee" />
                                 </a>
                             </div>
-                            <div class="widget widget-address">
-                                <ul>
-                                    <li>Address : 991 White St . Dawsonville, GA 30534 , New York</li>
-                                    <li>Phone number : + (898) 784-7217</li>
-                                    <li>Email : Tatee.architecture@gmail.com</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-6">
-                        <div class="footer-col p-l-70 p-md-l-0">
-                            <div class="widget widget_pages">
-                                <h4 class="widget-title">Link</h4>
-                                <ul>
-                                    <li>
-                                        <a href="#">About us</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Services</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Contact</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="footer-col p-l-70 p-md-l-0">
-                            <h4 class="widget-title">Social</h4>
-                            <div class="widget widget_socials">
-                                <ul class="list-social list-social-2">
-                                    <li class="list-social__item">
-                                        <a class="ic-fb" href="#">
-                                            <i class="zmdi zmdi-facebook"></i>
-                                        </a>
-                                    </li>
-                                    <li class="list-social__item">
-                                        <a class="ic-insta" href="#">
-                                            <i class="zmdi zmdi-instagram"></i>
-                                        </a>
-                                    </li>
-                                    <li class="list-social__item">
-                                        <a class="ic-twi" href="#">
-                                            <i class="zmdi zmdi-twitter"></i>
-                                        </a>
-                                    </li>
-                                    <li class="list-social__item">
-                                        <a class="ic-pinterest" href="#">
-                                            <i class="zmdi zmdi-pinterest"></i>
-                                        </a>
-                                    </li>
-                                    <li class="list-social__item">
-                                        <a class="ic-google" href="#">
-                                            <i class="zmdi zmdi-google"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="footer-col">
-                            <div class="widget widget_text">
-                                <h4 class="widget-title">copyright</h4>
-                                <p>© 2018 TATEE . Designed by Authemes</p>
+                            <div class="header__content-right">
+                                <nav class="header-nav-menu">
+                                    <ul class="menu nav-menu">
+                                        <li class="menu-item menu-item-has-children">
+                                            <a href="/index.html">Home</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="works.html">Our Works</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="contact.html">contact</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                                <div class="header-social">
+                                    <ul class="list-social">
+                                        <li class="list-social__item">
+                                            <a class="ic-fb" href="#">
+                                                <i class="zmdi zmdi-facebook"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-social__item">
+                                            <a class="ic-insta" href="#">
+                                                <i class="zmdi zmdi-instagram"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </footer>
-        <!-- END FOOTER-->
-<script src="js/extra.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-<script>
-    // VIDEO MODAL FUNCTIONS
-    function openVideoModal(videoSrc, title, description) {
-      document.getElementById('modalVideo').src = videoSrc;
-      document.getElementById('modalTitle').innerText = title;
-      document.getElementById('modalDescription').innerText = description;
-      document.getElementById('videoModal').style.display = 'flex';
-    }
-  
-    function closeVideoModal() {
-      document.getElementById('videoModal').style.display = 'none';
-      document.getElementById('modalVideo').pause();
-    }
-  
-    // FOUNDER MODAL FUNCTIONS
-    function openFounderModal() {
-      document.getElementById('founderModal').style.display = 'flex';
-    }
-  
-    function closeFounderModal() {
-      document.getElementById('founderModal').style.display = 'none';
-    }
-  
-    // Close founder modal when clicking outside it
-    window.onclick = function(event) {
-      const modal = document.getElementById('founderModal');
-      if (event.target === modal) {
-        closeFounderModal();
-      }
-    }
-  </script>
-  <script>
-    $(document).ready(function(){
-      $('.slider').slick({
-        slidesToShow: 3,     // Number of videos shown at once
-        slidesToScroll: 1,
-        arrows: true,        // Show next/prev arrows
-        dots: true,          // Show navigation dots below
-        infinite: false,     // No loop
-        responsive: [
-          {
-            breakpoint: 768,
-            settings: {
-              slidesToShow: 1
-            }
-          }
-        ]
-      });
-    });
-  </script>
-  
-    <!-- Jquery JS-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <!-- Bootstrap JS-->
-    <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
+        </div>
+        <div class="header-mobile d-block d-lg-none">
+            <div class="header-mobile__bar">
+                <div class="container-fluid">
+                    <div class="header-mobile__bar-inner">
+                        <a class="logo" href="index.html">
+                            <img src="images/logo.png" alt="Tatee" />
+                        </a>
+                        <button class="hamburger hamburger--slider float-right" type="button">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <nav class="header-nav-menu-mobile">
+                <div class="container-fluid">
+                    <ul class="menu nav-menu menu-mobile">
+                        <li class="menu-item menu-item-has-children">
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="works.html">Our Works</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="contact.html">contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- END HEADER-->
+
+    <!-- PROJECTS SECTION -->
+    <section class="arch-projects-wrapper">
+        <div class="arch-section-title">
+            <h2 class="arch-title-1">our work</h2>
+            <p class="arch-subtitle">Exceptional architectural projects crafted with precision and vision</p>
+        </div>
+        <div class="arch-container">
+            <!-- Project Tabs Navigation -->
+            <div class="arch-project-category-tabs">
+                <ul class="nav nav-tabs arch-project-tabs-nav" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="arch-project-pending-tab" data-toggle="tab" href="#arch-project-pending-content" role="tab" aria-controls="arch-project-pending-content" aria-selected="true">Pending Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="arch-project-ongoing-tab" data-toggle="tab" href="#arch-project-ongoing-content" role="tab" aria-controls="arch-project-ongoing-content" aria-selected="false">Ongoing Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="arch-project-completed-tab" data-toggle="tab" href="#arch-project-completed-content" role="tab" aria-controls="arch-project-completed-content" aria-selected="false">Completed Projects</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Tab Content -->
+            <div class="tab-content arch-project-tabs-content">
+                <!-- Pending Projects Tab -->
+                <div class="tab-pane fade show active" id="arch-project-pending-content" role="tabpanel" aria-labelledby="arch-project-pending-tab">
+                    <div class="arch-projects-grid">
+                        <article class="arch-project-card" onclick="redirectToDetails()">
+                            <div class="arch-project-image">
+                                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Modern Loft Concept" />
+                                <div class="arch-project-overlay">
+                                    <button class="view-project-btn">View Project</button>
+                                </div>
+                            </div>
+                            <div class="arch-project-content">
+                                <h3 class="arch-project-title">Modern Loft Concept</h3>
+                                <div class="arch-project-location">
+                                    <span class="arch-location-icon"></span>
+                                    Perth, Australia
+                                </div>
+                                <div class="arch-project-status arch-pending-status">Pending Approval</div>
+                            </div>
+                        </article>
+                        
+                        <article class="arch-project-card" onclick="redirectToDetails()">
+                            <div class="arch-project-image">
+                                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Eco-friendly Villa" />
+                                <div class="arch-project-overlay">
+                                    <button class="view-project-btn">View Project</button>
+                                </div>
+                            </div>
+                            <div class="arch-project-content">
+                                <h3 class="arch-project-title">Eco-friendly Villa</h3>
+                                <div class="arch-project-location">
+                                    <span class="arch-location-icon"></span>
+                                    New York, USA
+                                </div>
+                                <div class="arch-project-status arch-pending-status">Planning Stage</div>
+                            </div>
+                        </article>
+                        
+                        <article class="arch-project-card" onclick="redirectToDetails()">
+                            <div class="arch-project-image">
+                                <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Mountain Retreat" />
+                                <div class="arch-project-overlay">
+                                    <button class="view-project-btn">View Project</button>
+                                </div>
+                            </div>
+                            <div class="arch-project-content">
+                                <h3 class="arch-project-title">Mountain Retreat</h3>
+                                <div class="arch-project-location">
+                                    <span class="arch-location-icon"></span>
+                                    Colorado, USA
+                                </div>
+                                <div class="arch-project-status arch-pending-status">Funding Stage</div>
+                            </div>
+                        </article>
+                        
+                        <article class="arch-project-card" onclick="redirectToDetails()">
+                            <div class="arch-project-image">
+                                <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Seaside Manor" />
+                                <div class="arch-project-overlay">
+                                    <button class="view-project-btn">View Project</button>
+                                </div>
+                            </div>
+                            <div class="arch-project-content">
+                                <h3 class="arch-project-title">Seaside Manor</h3>
+                                <div class="arch-project-location">
+                                    <span class="arch-location-icon"></span>
+                                    Malibu, USA
+                                </div>
+                                <div class="arch-project-status arch-pending-status">Design Phase</div>
+                            </div>
+                        </article>
+                        
+                        <article class="arch-project-card" onclick="redirectToDetails()">
+                            <div class="arch-project-image">
+                                <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Urban Apartment Complex" />
+                                <div class="arch-project-overlay">
+                                    <button class="view-project-btn">View Project</button>
+                                </div>
+                            </div>
+                            <div class="arch-project-content">
+                                <h3 class="arch-project-title">Urban Apartment Complex</h3>
+                                <div class="arch-project-location">
+                                    <span class="arch-location-icon"></span>
+                                    London, UK
+                                </div>
+                                <div class="arch-project-status arch-pending-status">Permit Pending</div>
+                            </div>
+                        </article>
+                        
+                        <article class="arch-project-card" onclick="redirectToDetails()">
+                            <div class="arch-project-image">
+                                <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Luxury Penthouse" />
+                                <div class="arch-project-overlay">
+                                    <button class="view-project-btn">View Project</button>
+                                </div>
+                            </div>
+                            <div class="arch-project-content">
+                                <h3 class="arch-project-title">Luxury Penthouse</h3>
+                                <div class="arch-project-location">
+                                    <span class="arch-location-icon"></span>
+                                    Miami, USA
+                                </div>
+                                <div class="arch-project-status arch-pending-status">Client Review</div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+                
+                <!-- Ongoing Projects Tab -->
+                <div class="tab-pane fade" id="arch-project-ongoing-content" role="tabpanel" aria-labelledby="arch-project-ongoing-tab">
+                    <div class="arch-projects-grid">
+                        <article class="arch-project-card" onclick="redirectToDetails()">
+                            <div class="arch-project-image">
+                                <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Skyline Tower" />
+                                <div class="arch-project-overlay">
+                                    <button class="view-project-btn">View Project</button>
+                                </div>
+                            </div>
+                            <div class="arch-project-content">
+                                <h3 class="arch-project-title">Skyline Tower</h3>
+                                <div class="arch-project-location">
+                                    <span class="arch-location-icon"></span>
+                                    Michigan, USA
+                                </div>
+                                <div class="arch-project-status arch-ongoing-status">Construction 50%</div>
+                            </div>
+                        </article>
+                        
+                        <article class="arch-project-card" onclick="redirectToDetails()">
+                            <div class="arch-project-image">
+                                <img src="https://images.unsplash.com/photo-1600573472550-8090b5e0745e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Ocean View Resort" />
+                                <div class="arch-project-overlay">
+                                    <button class="view-project-btn">View Project</button>
+                                </div>
+                            </div>
+                            <div class="arch-project-content">
+                                <h3 class="arch-project-title">Ocean View Resort</h3>
+                                <div class="arch-project-location">
+                                    <span class="arch-location-icon"></span>
+                                    Cancun, Mexico
+                                </div>
+                                <div class="arch-project-status arch-ongoing-status">Construction 75%</div>
+                            </div>
+                        </article>
+                        
+                        <article class="arch-project-card" onclick="redirectToDetails()">
+                            <div class="arch-project-image">
+                                <img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Modern City Office" />
+                                <div class="arch-project-overlay">
+                                    <button class="view-project-btn">View Project</button>
+                                </div>
+                            </div>
+                            <div class="arch-project-content">
+                                <h3 class="arch-project-title">Modern City Office</h3>
+                                <div class="arch-project-location">
+                                    <span class="arch-location-icon"></span>
+                                    Tokyo, Japan
+                                </div>
+                                <div class="arch-project-status arch-ongoing-status">Interior Work 30%</div>
+                            </div>
+                        </article>
+                        
+                        <article class="arch-project-card" onclick="redirectToDetails()">
+                            <div class="arch-project-image">
+                                <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Green Valley Homes" />
+                                <div class="arch-project-overlay">
+                                    <button class="view-project-btn">View Project</button>
+                                </div>
+                            </div>
+                            <div class="arch-project-content">
+                                <h3 class="arch-project-title">Green Valley Homes</h3>
+                                <div class="arch-project-location">
+                                    <span class="arch-location-icon"></span>
+                                    Vancouver, Canada
+                                </div>
+                                <div class="arch-project-status arch-ongoing-status">Foundation Complete</div>
+                            </div>
+                        </article>
+                        
+                        <article class="arch-project-card" onclick="redirectToDetails()">
+                            <div class="arch-project-image">
+                                <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Downtown Revival" />
+                                <div class="arch-project-overlay">
+                                    <button class="view-project-btn">View Project</button>
+                                </div>
+                            </div>
+                            <div class="arch-project-content">
+                                <h3 class="arch-project-title">Downtown Revival</h3>
+                                <div class="arch-project-location">
+                                    <span class="arch-location-icon"></span>
+                                    Chicago, USA
+                                </div>
+                                <div class="arch-project-status arch-ongoing-status">Structural Work 65%</div>
+                            </div>
+                        </article>
+                        
+                        <article class="arch-project-card" onclick="redirectToDetails()">
+                            <div class="arch-project-image">
+                                <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Industrial Conversion" />
+                                <div class="arch-project-overlay">
+                                    <button class="view-project-btn">View Project</button>
+                                </div>
+                            </div>
+                            <div class="arch-project-content">
+                                <h3 class="arch-project-title">Industrial Conversion</h3>
+                                <div class="arch-project-location">
+                                    <span class="arch-location-icon"></span>
+                                    Berlin, Germany
+                                </div>
+                                <div class="arch-project-status arch-ongoing-status">Exterior Work 40%</div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+                
+                <!-- Completed Projects Tab -->
+                <div class="tab-pane fade" id="arch-project-completed-content" role="tabpanel" aria-labelledby="arch-project-completed-tab">
+                    <div class="arch-projects-grid">
+                        <article class="arch-project-card" onclick="redirectToDetails()">
+                            <div class="arch-project-image">
+                                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Lakeside Residences" />
+                                <div class="arch-project-overlay">
+                                    <button class="view-project-btn">View Project</button>
+                                </div>
+                            </div>
+                            <div class="arch-project-content">
+                                <h3 class="arch-project-title">Lakeside Residences</h3>
+                                <div class="arch-project-location">
+                                    <span class="arch-location-icon"></span>
+                                    Geneva, Switzerland
+                                </div>
+                                <div class="arch-project-status arch-completed-status">Completed 2023</div>
+                            </div>
+                        </article>
+                        
+                        <article class="arch-project-card" onclick="redirectToDetails()">
+                            <div class="arch-project-image">
+                                <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Downtown Plaza" />
+                                <div class="arch-project-overlay">
+                                    <button class="view-project-btn">View Project</button>
+                                </div>
+                            </div>
+                            <div class="arch-project-content">
+                                <h3 class="arch-project-title">Downtown Plaza</h3>
+                                <div class="arch-project-location">
+                                    <span class="arch-location-icon"></span>
+                                    Los Angeles, USA
+                                </div>
+                                <div class="arch-project-status arch-completed-status">Completed 2022</div>
+                            </div>
+                        </article>
+                        
+                        <article class="arch-project-card" onclick="redirectToDetails()">
+                            <div class="arch-project-image">
+                                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Desert Oasis Hotel" />
+                                <div class="arch-project-overlay">
+                                    <button class="view-project-btn">View Project</button>
+                                </div>
+                            </div>
+                            <div class="arch-project-content">
+                                <h3 class="arch-project-title">Desert Oasis Hotel</h3>
+                                <div class="arch-project-location">
+                                    <span class="arch-location-icon"></span>
+                                    Dubai, UAE
+                                </div>
+                                <div class="arch-project-status arch-completed-status">Completed 2021</div>
+                            </div>
+                        </article>
+                        
+                        <article class="arch-project-card" onclick="redirectToDetails()">
+                            <div class="arch-project-image">
+                                <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="River View Apartments" />
+                                <div class="arch-project-overlay">
+                                    <button class="view-project-btn">View Project</button>
+                                </div>
+                            </div>
+                            <div class="arch-project-content">
+                                <h3 class="arch-project-title">River View Apartments</h3>
+                                <div class="arch-project-location">
+                                    <span class="arch-location-icon"></span>
+                                    Paris, France
+                                </div>
+                                <div class="arch-project-status arch-completed-status">Completed 2023</div>
+                            </div>
+                        </article>
+                        
+                        <article class="arch-project-card" onclick="redirectToDetails()">
+                            <div class="arch-project-image">
+                                <img src="https://images.unsplash.com/photo-1600047509782-20d39509f26d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Historic Restoration" />
+                                <div class="arch-project-overlay">
+                                    <button class="view-project-btn">View Project</button>
+                                </div>
+                            </div>
+                            <div class="arch-project-content">
+                                <h3 class="arch-project-title">Historic Restoration</h3>
+                                <div class="arch-project-location">
+                                    <span class="arch-location-icon"></span>
+                                    Boston, USA
+                                </div>
+                                <div class="arch-project-status arch-completed-status">Completed 2020</div>
+                            </div>
+                        </article>
+                        
+                        <article class="arch-project-card" onclick="redirectToDetails()">
+                            <div class="arch-project-image">
+                                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Garden Heights Complex" />
+                                <div class="arch-project-overlay">
+                                    <button class="view-project-btn">View Project</button>
+                                </div>
+                            </div>
+                            <div class="arch-project-content">
+                                <h3 class="arch-project-title">Garden Heights Complex</h3>
+                                <div class="arch-project-location">
+                                    <span class="arch-location-icon"></span>
+                                    Singapore
+                                </div>
+                                <div class="arch-project-status arch-completed-status">Completed 2022</div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER-->
+    <footer class="footer bg-parallax">
+        <div class="bg-overlay bg-overlay--p85"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-col">
+                        <div class="widget m-b-25">
+                            <a href="#">
+                                <img src="images/icon/logo-white.png" alt="Tatee" />
+                            </a>
+                        </div>
+                        <div class="widget widget-address">
+                            <ul>
+                                <li>Address : 991 White St . Dawsonville, GA 30534 , New York</li>
+                                <li>Phone number : + (898) 784-7217</li>
+                                <li>Email : Tatee.architecture@gmail.com</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <div class="footer-col p-l-70 p-md-l-0">
+                        <div class="widget widget_pages">
+                            <h4 class="widget-title">Link</h4>
+                            <ul>
+                                <li><a href="#">About us</a></li>
+                                <li><a href="#">Services</a></li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-col p-l-70 p-md-l-0">
+                        <h4 class="widget-title">Social</h4>
+                        <div class="widget widget_socials">
+                            <ul class="list-social list-social-2">
+                                <li class="list-social__item">
+                                    <a class="ic-fb" href="#"><i class="zmdi zmdi-facebook"></i></a>
+                                </li>
+                                <li class="list-social__item">
+                                    <a class="ic-insta" href="#"><i class="zmdi zmdi-instagram"></i></a>
+                                </li>
+                                <li class="list-social__item">
+                                    <a class="ic-twi" href="#"><i class="zmdi zmdi-twitter"></i></a>
+                                </li>
+                                <li class="list-social__item">
+                                    <a class="ic-pinterest" href="#"><i class="zmdi zmdi-pinterest"></i></a>
+                                </li>
+                                <li class="list-social__item">
+                                    <a class="ic-google" href="#"><i class="zmdi zmdi-google"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-col">
+                        <div class="widget widget_text">
+                            <h4 class="widget-title">copyright</h4>
+                            <p>© 2018 TATEE . Designed by Authemes</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- END FOOTER-->
+
+    <!-- JavaScript -->
+    <script src="js/extra.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    
     <!-- Vendor JS-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
     <script src="vendor/animsition/animsition.min.js"></script>
     <script src="vendor/slick/slick.min.js"></script>
     <script src="vendor/waypoints/jquery.waypoints.min.js"></script>
@@ -609,10 +666,6 @@
     <script src="vendor/noUiSlider/nouislider.min.js"></script>
     <script type="text/javascript" src="vendor/revolution/js/jquery.themepunch.tools.min.js"></script>
     <script type="text/javascript" src="vendor/revolution/js/jquery.themepunch.revolution.min.js"></script>
-    <!--
-    | (Load Extensions only on Local File Systems !
-    | The following part can be removed on Server for On Demand Loading)
-    -->
     <script type="text/javascript" src="vendor/revolution/js/extensions/revolution.extension.video.min.js"></script>
     <script type="text/javascript" src="vendor/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
     <script type="text/javascript" src="vendor/revolution/js/extensions/revolution.extension.actions.min.js"></script>
@@ -622,48 +675,91 @@
     <script type="text/javascript" src="vendor/revolution/js/extensions/revolution.extension.migration.min.js"></script>
     <script type="text/javascript" src="vendor/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
     <script type="text/javascript" src="vendor/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
-    <!-- Config Revolution Slider-->
     <script type="text/javascript" src="js/config-revolution.min.js"></script>
-
-    <!-- Main JS-->
     <script src="js/global.js"></script>
+
     <script>
-        function openModal() {
+        // Function to redirect to details page
+        function redirectToDetails() {
+            window.location.href = 'details.html';
+        }
+
+        // Prevent event bubbling for button clicks
+        document.addEventListener('DOMContentLoaded', function() {
+            const viewButtons = document.querySelectorAll('.view-project-btn');
+            viewButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    redirectToDetails();
+                });
+            });
+        });
+
+        // Video modal functions
+        function openVideoModal(videoSrc, title, description) {
+            document.getElementById('modalVideo').src = videoSrc;
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalDescription').innerText = description;
+            document.getElementById('videoModal').style.display = 'flex';
+        }
+
+        function closeVideoModal() {
+            document.getElementById('videoModal').style.display = 'none';
+            document.getElementById('modalVideo').pause();
+        }
+
+        // Founder modal functions
+        function openFounderModal() {
             document.getElementById('founderModal').style.display = 'flex';
         }
-        
-        function closeModal() {
+
+        function closeFounderModal() {
             document.getElementById('founderModal').style.display = 'none';
         }
-        
+
+        // Close founder modal when clicking outside it
         window.onclick = function(event) {
             const modal = document.getElementById('founderModal');
             if (event.target === modal) {
-                closeModal();
+                closeFounderModal();
             }
         }
-        </script>
 
-        <script>
-window.addEventListener('scroll', function() {
-    const header = document.getElementById('header');
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    
-    if (scrollTop > 50) {
-        header.classList.add('scrolled');
-    } else {
-        header.classList.remove('scrolled');
-    }
-});
+        // Slider initialization
+        $(document).ready(function(){
+            $('.slider').slick({
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                arrows: true,
+                dots: true,
+                infinite: false,
+                responsive: [
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 1
+                        }
+                    }
+                ]
+            });
+        });
 
-document.addEventListener('DOMContentLoaded', function() {
-    const header = document.getElementById('header');
-    header.classList.remove('scrolled');
-});
-</script>
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
 
-        
+        document.addEventListener('DOMContentLoaded', function() {
+            const header = document.getElementById('header');
+            header.classList.remove('scrolled');
+        });
+    </script>
 </body>
-
 </html>
-<!-- end document-->

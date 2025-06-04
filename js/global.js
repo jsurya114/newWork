@@ -651,7 +651,7 @@
             var headerbar = that.find('.header__bar');
 
             var headerbarOffsetTop = headerbar.offset().top;
-            var headerbarHeight = 97; // Set a fixed height instead of measuring
+            var headerbarHeight = 75; // Set a fixed height instead of measuring
 
             // Add placeholder for sticky spacing
             headerbar.after("<div class='header__holder' style='height: 0px;'></div>");

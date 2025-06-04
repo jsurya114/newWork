@@ -1,270 +1,242 @@
-/* HEADER POSITIONING - Always visible, overlay the banner */
-#header {
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    z-index: 999 !important;
-    width: 100% !important;
-    transition: all 0.4s ease !important;
+/* RESET AND BASE STYLES */
+* {
+  box-sizing: border-box;
 }
 
-/* Default header - transparent background */
+html,
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow-x: hidden;
+}
+
+/* HEADER POSITIONING - Always visible, overlay the banner */
+#header {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 999 !important;
+  width: 100% !important;
+  transition: all 0.4s ease !important;
+}
+
+/* ENHANCED HEADER TINT EFFECT - Better visibility */
 .header,
 .header-1,
 .header__bar,
 .header-mobile,
 .header-mobile__bar {
-    background: transparent !important;
-    transition: all 0.3s ease !important;
+  background: rgba(22, 23, 22, 0.092) !important; /* Light tint for subtle effect */
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  transition: all 0.3s ease !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15) !important;
 }
 
+/* Header when scrolled - solid background */
 #header.scrolled .header,
 #header.scrolled .header-1,
 #header.scrolled .header__bar,
 #header.scrolled .header-mobile,
 #header.scrolled .header-mobile__bar {
-    background: rgba(255, 255, 255, 0.6) !important;
-    /* backdrop-filter: blur(10px) !important; */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(15px) !important;
+  -webkit-backdrop-filter: blur(15px) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
 }
 
-
-/* Remove any existing background properties */
-#header .header {
-    background: none !important;
-}
-
-/* Reduce header height to minimize space usage */
+/* Header height optimization */
 .header__bar {
-    padding: 8px 0 !important;
-    height: auto !important;
-    min-height: 50px !important;
+  padding: 6px 0 !important;
+  height: auto !important;
+  min-height: 55px !important;
 }
 
 .header-mobile__bar {
-    padding: 6px 0 !important;
-    height: auto !important;
-    min-height: 45px !important;
+  padding: 5px 0 !important;
+  height: auto !important;
+  min-height: 50px !important;
 }
 
-/* Reduce logo size for more compact header */
+/* Logo styling with enhanced visibility */
 .logo img {
-    max-width: 110px !important;
-    height: auto !important;
+  max-width: 87px !important;
+  height: auto !important;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.5)) brightness(1.2) contrast(1.1) !important;
+  transition: all 0.3s ease !important;
 }
 
-/* Mobile header background - transparent by default */
+#header.scrolled .logo img {
+  filter: none !important;
+}
+
+/* Mobile header background with tint */
 .header-mobile__bar-inner {
-    background: transparent !important;
-    transition: all 0.3s ease !important;
+  background: rgba(0, 0, 0, 0.25) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  transition: all 0.3s ease !important;
 }
 
-/* Mobile header background when scrolled */
 #header.scrolled .header-mobile__bar-inner {
-    background: rgba(255, 255, 255, 0.95) !important;
-    backdrop-filter: blur(10px) !important;
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(15px) !important;
+  -webkit-backdrop-filter: blur(15px) !important;
 }
 
-/* Make sure navigation menu background is transparent */
+/* ENHANCED NAVIGATION STYLING */
 .header-nav-menu {
-    background: transparent !important;
+  background: transparent !important;
 }
 
-/* Navigation text styling - white by default (over banner) */
+/* Navigation text - enhanced visibility with better contrast */
 .header-nav-menu .menu a {
-    color: rgb(12, 6, 6) !important;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7) !important;
-    transition: all 0.3s ease !important;
-}
-
-/* Navigation text when scrolled - dark for white background */
-#header.scrolled .header-nav-menu .menu a {
-    color: #333333 !important;
-    text-shadow: none !important;
+  color: #ffffff !important;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9) !important;
+  font-weight: 600 !important;
+  font-size: 15px !important;
+  transition: all 0.3s ease !important;
+  padding: 8px 16px !important;
+  border-radius: 4px !important;
 }
 
 .header-nav-menu .menu a:hover {
-    opacity: 0.8 !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: #ffffff !important;
+  transform: translateY(-1px) !important;
 }
 
-/* Social icons styling - white by default */
+/* Navigation text when scrolled */
+#header.scrolled .header-nav-menu .menu a {
+  color: #333333 !important;
+  text-shadow: none !important;
+}
+
+#header.scrolled .header-nav-menu .menu a:hover {
+  background: rgba(0, 0, 0, 0.05) !important;
+  color: #000000 !important;
+}
+
+/* ENHANCED SOCIAL ICONS */
 .header-social a {
-    color: white !important;
-    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.5));
-    transition: all 0.3s ease !important;
-}
-
-/* Social icons when scrolled - dark for white background */
-#header.scrolled .header-social a {
-    color: #333333 !important;
-    filter: none !important;
+  color: #ffffff !important;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6)) !important;
+  transition: all 0.3s ease !important;
+  padding: 8px !important;
+  border-radius: 50% !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  margin: 0 4px !important;
 }
 
 .header-social a:hover {
-    opacity: 0.8 !important;
+  background: rgba(255, 255, 255, 0.2) !important;
+  transform: translateY(-2px) scale(1.1) !important;
 }
 
-/* Logo styling - with shadow for visibility over banner */
-.header .logo img {
-    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.5));
-    transition: all 0.3s ease !important;
+#header.scrolled .header-social a {
+  color: #333333 !important;
+  filter: none !important;
+  background: rgba(0, 0, 0, 0.05) !important;
 }
 
-/* Logo when scrolled - remove shadow */
-#header.scrolled .logo img {
-    filter: none !important;
+#header.scrolled .header-social a:hover {
+  background: rgba(0, 0, 0, 0.1) !important;
 }
 
-/* BANNER/SLIDER ADJUSTMENTS - Remove any top margin/padding and account for fixed header */
-#main {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
-}
-
-.rev_slider_wrapper {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
-    position: relative !important;
-    z-index: 1 !important;
-}
-
-/* Ensure content flows under the fixed header properly */
-body {
-    margin: 0 !important;
-    padding: 0 !important;
-}
-
-/* Make sure the slider/banner starts from absolute top */
-.rev_slider {
-    margin-top: 0 !important;
-    position: relative !important;
-    z-index: 1 !important;
-}
-
-/* Remove any spacing that might cause white gap */
-.page-line {
-    display: none !important;
-}
-
-/* Mobile menu adjustments */
-.header-nav-menu-mobile {
-    background: rgba(255, 255, 255, 0.95) !important;
-    backdrop-filter: blur(10px) !important;
-}
-
-/* Fix mobile menu positioning */
-.header-mobile {
-    position: fixed !important; /* Changed to fixed for scroll effect */
-    top: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    z-index: 999 !important;
-}
-
-/* Hamburger menu color - white by default */
+/* ENHANCED HAMBURGER MENU */
 .hamburger-inner,
 .hamburger-inner::before,
 .hamburger-inner::after {
-    background-color: white !important;
-    transition: all 0.3s ease !important;
+  background-color: #ffffff !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+  transition: all 0.3s ease !important;
 }
 
-/* Hamburger menu when scrolled - dark for white background */
 #header.scrolled .hamburger-inner,
 #header.scrolled .hamburger-inner::before,
 #header.scrolled .hamburger-inner::after {
-    background-color: #333333 !important;
+  background-color: #333333 !important;
+  box-shadow: none !important;
 }
 
-element.style {
-    height: 80px;
-}
-/* Ensure slider starts from very top */
-.rev_slider_wrapper--p80 {
-    padding-top: 0 !important;
-}
-
-/* Remove any container margins that might cause gaps */
-.page-wrapper {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
+/* FULL SCREEN SLIDER SETUP */
+.slider-section {
+  position: relative !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
 }
 
-/* Additional fix for any wrapper spacing */
-body {
-    margin: 0 !important;
-    padding: 0 !important;
+.rev_slider_wrapper {
+  position: relative !important;
+  width: 100% !important;
+  height: 100vh !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  top: 0 !important;
+  left: 0 !important;
+  z-index: 1 !important;
 }
 
-/* Ensure page content starts immediately after header */
-.page-wrapper,
-.main-wrapper,
-.content-wrapper {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
+.rev_slider_wrapper--fullscreen {
+  height: 100vh !important;
+  min-height: 100vh !important;
 }
 
-/* Fix for revolution slider positioning */
 .rev_slider {
-    margin-top: 0 !important;
-    position: relative !important;
-    z-index: 1 !important;
+  position: relative !important;
+  width: 100% !important;
+  height: 100vh !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  z-index: 1 !important;
 }
 
-/* Ensure full height coverage */
-.rev_slider_wrapper {
-    position: relative !important;
-    top: 0 !important;
-    z-index: 1 !important;
+/* Ensure slider images cover full screen */
+.rev-slidebg {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
 }
 
-/* Remove any default spacing from main sections */
-section:first-child {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
-}
-
-/* Force content to start from top */
-.main-content,
-.page-content,
-.site-content {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
-}
-
-/* FINAL GAP FIX - Add this to your CSS file */
-
-/* Remove the spacer div that creates gap */
-.rev-spacer {
-    display: none !important;
-}
-
-/* Remove top padding from about us section */
-section.p-t-10.p-b-55 {
-    padding-top: 0 !important;
-    margin-top: -30px !important;
-}
-
-/* Force slider wrapper to have no bottom spacing */
-.rev_slider_wrapper {
-    margin-bottom: 0 !important;
-    padding-bottom: 0 !important;
+/* Remove any spacing elements */
+.rev-spacer,
+.page-line {
+  display: none !important;
 }
 
 .tp-fullwidth-forcer {
-  height: 60px !important;   /* Moderate spacing */
+  height: 0 !important;
   margin: 0 !important;
   padding: 0 !important;
 }
 
-section.p-t-10.p-b-55 {
+/* MAIN CONTENT ADJUSTMENTS */
+#main {
   margin-top: 0 !important;
-  padding-top: 40px !important;  /* Comfortable top spacing */
+  padding-top: 0 !important;
 }
 
+.page-wrapper {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* About section spacing */
+section.p-t-10.p-b-55 {
+  margin-top: 0 !important;
+  padding-top: 80px !important;
+}
+
+/* CUSTOMER SECTION STYLING */
 .our-customers {
-    padding-top: 60px;
+  padding-top: 80px !important;
+  padding-bottom: 60px !important;
 }
 
 .section-title {
@@ -282,9 +254,16 @@ section.p-t-10.p-b-55 {
 .video-card {
   position: relative;
   width: 300px;
-  border-radius: 10px;
+  border-radius: 15px;
   overflow: hidden;
   cursor: pointer;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
 
 .video-card video {
@@ -294,7 +273,7 @@ section.p-t-10.p-b-55 {
 }
 
 .video-card .project-info {
-  padding: 10px;
+  padding: 15px;
   background: #fff;
 }
 
@@ -302,11 +281,13 @@ section.p-t-10.p-b-55 {
   display: block;
   font-size: 16px;
   margin-bottom: 5px;
+  color: #333;
 }
 
 .video-card p {
   font-size: 14px;
-  color: #555;
+  color: #666;
+  margin: 0;
 }
 
 .play-button {
@@ -316,69 +297,256 @@ section.p-t-10.p-b-55 {
   transform: translate(-50%, -50%);
   width: 60px;
   height: 60px;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.7);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 2;
+  transition: all 0.3s ease;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.play-button:hover {
+  background: rgba(0, 0, 0, 0.9);
+  transform: translate(-50%, -50%) scale(1.1);
+  border-color: rgba(255, 255, 255, 0.6);
 }
 
 .play-button::before {
-  content: '';
+  content: "";
   display: block;
   width: 0;
   height: 0;
   border-left: 20px solid white;
   border-top: 12px solid transparent;
   border-bottom: 12px solid transparent;
+  margin-left: 4px;
 }
 
-/* Modal Styles */
+/* MODAL STYLES */
 .modal {
   display: none;
   position: fixed;
-  z-index: 999;
+  z-index: 9999;
   padding-top: 60px;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.9);
+  align-items: center;
+  justify-content: center;
 }
 
 .modal-content {
   margin: auto;
   background-color: #fff;
-  padding: 20px;
-  width: 80%;
-  max-width: 800px;
-  border-radius: 10px;
+  padding: 30px;
+  width: 90%;
+  max-width: 900px;
+  border-radius: 15px;
   position: relative;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
 
 .close-btn {
   position: absolute;
-  top: 10px;
-  right: 20px;
+  top: 15px;
+  right: 25px;
   color: #aaa;
-  font-size: 28px;
+  font-size: 35px;
   font-weight: bold;
   cursor: pointer;
+  transition: color 0.3s ease;
 }
 
 .close-btn:hover {
   color: #000;
 }
-.header__holder {
-height: 81px;
-}
 
 #modalVideo {
   width: 100%;
   height: auto;
-  margin-top: 10px;
+  margin-top: 15px;
+  border-radius: 10px;
 }
 
+/* FOUNDER MODAL STYLES */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+}
 
+.modal-box {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  max-width: 800px;
+  width: 90%;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.two-column {
+  display: flex;
+  min-height: 400px;
+}
+
+.modal-content-left {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.modal-content-left h3 {
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 24px;
+}
+
+.modal-content-left p {
+  color: #666;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+.modal-content-right {
+  flex: 1;
+  background: #f8f9fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .header__bar {
+    min-height: 50px !important;
+    padding: 5px 0 !important;
+  }
+
+  .header-mobile__bar {
+    min-height: 45px !important;
+    padding: 4px 0 !important;
+  }
+
+  .logo img {
+    max-width: 87px !important;
+  }
+
+  .slider-section {
+    height: 100vh !important;
+  }
+
+  .rev_slider_wrapper,
+  .rev_slider {
+    height: 100vh !important;
+  }
+
+  .video-card {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .slider {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .two-column {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .modal-content-left {
+    padding: 30px 20px;
+  }
+
+  .modal-content-right {
+    min-height: 250px;
+  }
+
+  section.p-t-10.p-b-55 {
+    padding-top: 60px !important;
+  }
+
+  .our-customers {
+    padding-top: 60px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .header__bar {
+    min-height: 45px !important;
+  }
+
+  .logo img {
+    max-width: 87px !important;
+  }
+
+  .modal-content {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .modal-content-left {
+    padding: 20px 15px;
+  }
+
+  .modal-content-left h3 {
+    font-size: 20px;
+  }
+
+  .modal-content-left p {
+    font-size: 14px;
+  }
+}
+
+/* ADDITIONAL ENHANCEMENTS */
+.header__content {
+  align-items: center;
+}
+
+.header-nav-menu .menu {
+  align-items: center;
+}
+
+.header-social {
+  display: flex;
+  align-items: center;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Performance optimizations */
+.rev_slider_wrapper,
+.rev_slider {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+#header {
+  will-change: background-color, backdrop-filter;
+  transform: translateZ(0);
+}
