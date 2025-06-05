@@ -94,7 +94,7 @@ body {
 /* Navigation text - enhanced visibility with better contrast */
 .header-nav-menu .menu a {
   color: #ffffff !important;
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9) !important;
+
   font-weight: 600 !important;
   font-size: 15px !important;
   transition: all 0.3s ease !important;
@@ -103,7 +103,7 @@ body {
 }
 
 .header-nav-menu .menu a:hover {
-  background: rgba(255, 255, 255, 0.1) !important;
+  
   color: #ffffff !important;
   transform: translateY(-1px) !important;
 }
@@ -126,24 +126,22 @@ body {
   transition: all 0.3s ease !important;
   padding: 8px !important;
   border-radius: 50% !important;
-  background: rgba(255, 255, 255, 0.1) !important;
+
   margin: 0 4px !important;
 }
 
 .header-social a:hover {
-  background: rgba(255, 255, 255, 0.2) !important;
+ 
   transform: translateY(-2px) scale(1.1) !important;
 }
 
 #header.scrolled .header-social a {
   color: #333333 !important;
   filter: none !important;
-  background: rgba(0, 0, 0, 0.05) !important;
+
 }
 
-#header.scrolled .header-social a:hover {
-  background: rgba(0, 0, 0, 0.1) !important;
-}
+
 
 /* ENHANCED HAMBURGER MENU */
 .hamburger-inner,
@@ -221,6 +219,8 @@ body {
   margin-top: 0 !important;
   padding-top: 0 !important;
 }
+
+
 
 .page-wrapper {
   margin-top: 0 !important;

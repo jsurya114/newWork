@@ -2953,6 +2953,8 @@ button {
     transform-origin: center right
 }
 
+
+
 .au-rev-bullet-3 .tp-bullet.selected .tp-bullet-number:after,
 .au-rev-bullet-3 .tp-bullet.selected .tp-bullet-number:before {
     -webkit-transform: scaleX(1);
