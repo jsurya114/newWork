@@ -557,6 +557,11 @@ html {
   transform: translateZ(0);
 }
 
+/* Remove plus icon from hamburger menu */
+.menu-item-has-children > a::after {
+  content: none !important;
+}
+
 /* Force header tint to fill edge-to-edge on all devices */
 .header__bar,
 .header-mobile__bar,
