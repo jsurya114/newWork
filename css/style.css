@@ -141,7 +141,7 @@ button.slick-next {
 }
 
 .our-customers .slick-slide {
-  margin: 0 40px;
+  margin: 0 20px;
 }
 
 .modal {
@@ -193,7 +193,7 @@ button.slick-next {
 }
 @media only screen and (max-width: 500px) {
   .our-customers .slick-slide {
-    margin: 0 0;
+    margin: 0;
   }
   .our-customers video {
     width: 100%;
