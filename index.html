@@ -352,64 +352,148 @@
             </section>
             <!-- END ABOUT US-->
 
-<section class="p-t-15 our-customers">
-  <div class="container">
-    <div class="section-title m-b-100">
-      <h5 class="title-sub">Still Want to Know More</h5>
-      <h2 class="title-1">Here From Our Customers</h2>
+            <!-- REFINED CUSTOMER SECTION -->
+            <section class="our-customers">
+              <div class="container">
+                <div class="section-title">
+                  <h5 class="title-sub">Still Want to Know More</h5>
+                  <h2 class="title-1">Here From Our Customers</h2>
+                </div>
+
+                <div class="customer-slider-wrapper">
+                  <div class="customer-slider">
+                    
+                    <div class="video-card-wrapper">
+                      <div class="video-card" onclick="openVideoModal('video/customer-01.mp4', 'Modern Villa Project', 'Experience our latest modern villa design featuring contemporary architecture and sustainable materials.')">
+                        <div class="video-container">
+                          <video src="video/customer-01.mp4" muted loop preload="metadata"></video>
+                          <div class="video-overlay">
+                            <div class="play-button">
+                              <div class="play-icon"></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="project-info">
+                          <h3 class="project-title">Project Alpha</h3>
+                          <p class="project-description">Experience our latest modern villa design featuring contemporary architecture and sustainable materials.</p>
+                          <div class="project-meta">
+                            <span class="project-location">Mumbai, India</span>
+                            <span class="project-year">2024</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="video-card-wrapper">
+                      <div class="video-card" onclick="openVideoModal('video/customer-02.mp4', 'Luxury Apartment Interior', 'Sophisticated interior design combining elegance with functionality.')">
+                        <div class="video-container">
+                          <video src="video/customer-02.mp4" muted loop preload="metadata"></video>
+                          <div class="video-overlay">
+                            <div class="play-button">
+                              <div class="play-icon"></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="project-info">
+                          <h3 class="project-title">Project Alpha</h3>
+                          <p class="project-description">Sophisticated interior design combining elegance with functionality.</p>
+                          <div class="project-meta">
+                            <span class="project-location">Delhi, India</span>
+                            <span class="project-year">2024</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="video-card-wrapper">
+                      <div class="video-card" onclick="openVideoModal('video/customer-03.mp4', 'Commercial Space Design', 'Innovative commercial space that maximizes productivity and aesthetic appeal.')">
+                        <div class="video-container">
+                          <video src="video/customer-03.mp4" muted loop preload="metadata"></video>
+                          <div class="video-overlay">
+                            <div class="play-button">
+                              <div class="play-icon"></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="project-info">
+                          <h3 class="project-title">Project Alpha</h3>
+                          <p class="project-description">Innovative commercial space that maximizes productivity and aesthetic appeal.</p>
+                          <div class="project-meta">
+                            <span class="project-location">Bangalore, India</span>
+                            <span class="project-year">2023</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="video-card-wrapper">
+                      <div class="video-card" onclick="openVideoModal('video/customer-04.mp4', 'Residential Complex', 'Complete residential complex with modern amenities and green spaces.')">
+                        <div class="video-container">
+                          <video src="video/customer-02.mp4" muted loop preload="metadata"></video>
+                          <div class="video-overlay">
+                            <div class="play-button">
+                              <div class="play-icon"></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="project-info">
+                          <h3 class="project-title">Project Alpha</h3>
+                          <p class="project-description">Complete residential complex with modern amenities and green spaces.</p>
+                          <div class="project-meta">
+                            <span class="project-location">Chennai, India</span>
+                            <span class="project-year">2023</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="video-card-wrapper">
+                      <div class="video-card" onclick="openVideoModal('video/customer-05.mp4', 'Heritage Restoration', 'Careful restoration of heritage building preserving historical significance.')">
+                        <div class="video-container">
+                          <video src="video/customer-01.mp4" muted loop preload="metadata"></video>
+                          <div class="video-overlay">
+                            <div class="play-button">
+                              <div class="play-icon"></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="project-info">
+                          <h3 class="project-title">Project Alpha</h3>
+                          <p class="project-description">Careful restoration of heritage building preserving historical significance.</p>
+                          <div class="project-meta">
+                            <span class="project-location">Jaipur, India</span>
+                            <span class="project-year">2024</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+             <!-- Enhanced Modal -->
+<div id="videoModal" class="video-modal" onclick="closeVideoModal()">
+  <div class="modal-container" onclick="event.stopPropagation()">
+    <div class="modal-header">
+      <h2 id="modalTitle" class="modal-title"></h2>
+      <button class="modal-close" onclick="closeVideoModal()" aria-label="Close modal">
+        <span>&times;</span>
+      </button>
     </div>
-
-    <div class="slider">
-      <div class="video-card" onclick="openVideoModal('video/customer-01.mp4', 'Project Alpha', 'A short description of Project Alpha.')">
-        <video src="video/customer-01.mp4" muted loop></video>
-        <div class="play-button"></div>
-        <div class="project-info">
-          <strong>Project Alpha</strong>
-          <p>A short description of Project Alpha.</p>
-        </div>
+    <div class="modal-body">
+      <div class="video-wrapper">
+        <video id="modalVideo" controls preload="metadata"></video>
       </div>
-
-      <div class="video-card" onclick="openVideoModal('video/customer-02.mp4', 'Project Beta', 'A short description of Project Beta.')">
-        <video src="video/customer-02.mp4" muted loop></video>
-        <div class="play-button"></div>
-        <div class="project-info">
-          <strong>Project Beta</strong>
-          <p>A short description of Project Beta.</p>
-        </div>
-      </div>
-
-      <div class="video-card" onclick="openVideoModal('video/customer-03.mp4', 'Project Gamma', 'A short description of Project Gamma.')">
-        <video src="video/customer-03.mp4" muted loop></video>
-        <div class="play-button"></div>
-        <div class="project-info">
-          <strong>Project Gamma</strong>
-          <p>A short description of Project Gamma.</p>
-        </div>
-      </div>
-
-      <div class="video-card" onclick="openVideoModal('video/customer-02.mp4', 'Project Gamma', 'A short description of Project Gamma.')">
-        <video src="video/customer-02.mp4" muted loop></video>
-        <div class="play-button"></div>
-        <div class="project-info">
-          <strong>Project Gamma</strong>
-          <p>A short description of Project Gamma.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal -->
-    <div id="videoModal" class="modal">
       <div class="modal-content">
-        <span class="close-btn" onclick="closeVideoModal()">&times;</span>
-        <h2 id="modalTitle"></h2>
-        <video id="modalVideo" controls></video>
-        <p id="modalDescription"></p>
+        <p id="modalDescription" class="modal-description"></p>
       </div>
     </div>
-
   </div>
-</section>
+</div>
 
+              </div>
+            </section>
+            <!-- END REFINED CUSTOMER SECTION -->
 
             <!-- LASTEST PROJECT-->
             <section class="wrap wrap--w1790 p-b-75">
@@ -617,80 +701,227 @@
         </footer>
         <!-- END FOOTER-->
     </div>
+
     <!-- Founder's Note Modal -->
-<div id="founderModal" class="modal-overlay">
-    <div class="modal-box two-column">
-        <span class="close-btn" onclick="closeModal()">&times;</span>
-        <div class="modal-content-left">
-          <h3>Founder's Note</h3>
-          <p>
-            Welcome! As the founder, I'm proud to lead a team of visionaries in architecture. Every project is driven by our passion for timeless, functional design. Thank you for being part of our journey.
-          </p>
-        </div>
-        <div class="modal-content-right">
-          <img src="images/founder-image.jpg" alt="Founder" />
-        </div>
-      </div>
-</div>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-<script>
-    // VIDEO MODAL FUNCTIONS
-    function openVideoModal(videoSrc, title, description) {
-      document.getElementById('modalVideo').src = videoSrc;
-      document.getElementById('modalTitle').innerText = title;
-      document.getElementById('modalDescription').innerText = description;
-      document.getElementById('videoModal').style.display = 'flex';
-    }
-  
-    function closeVideoModal() {
-      document.getElementById('videoModal').style.display = 'none';
-      document.getElementById('modalVideo').pause();
-    }
-  
-    // FOUNDER MODAL FUNCTIONS
-    function openFounderModal() {
-      document.getElementById('founderModal').style.display = 'flex';
-    }
-  
-    function closeFounderModal() {
-      document.getElementById('founderModal').style.display = 'none';
-    }
-  
-    // Close founder modal when clicking outside it
-    window.onclick = function(event) {
-      const modal = document.getElementById('founderModal');
-      if (event.target === modal) {
-        closeFounderModal();
-      }
-    }
-  </script>
-  <script>
-    $(document).ready(function(){
-     $('.slider').slick({
-  slidesToShow: 3,
-  slidesToScroll: 1,
-  arrows: true,
-  dots: true,
-  infinite: false,
-  responsive: [
-    {
-      breakpoint: 1200,
-      settings: {
-        slidesToShow: 2
-      }
-    },
-    {
-      breakpoint: 768,
-      settings: {
-        slidesToShow: 1
-      }
-    }
-  ]
+    <div id="founderModal" class="modal-overlay">
+        <div class="modal-box two-column">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <div class="modal-content-left">
+              <h3>Founder's Note</h3>
+              <p>
+                Welcome! As the founder, I'm proud to lead a team of visionaries in architecture. Every project is driven by our passion for timeless, functional design. Thank you for being part of our journey.
+              </p>
+            </div>
+            <div class="modal-content-right">
+              <img src="images/founder-image.jpg" alt="Founder" />
+            </div>
+          </div>
+    </div>
+
+    <!-- jQuery and Slick CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+    <!-- REFINED CUSTOMER SLIDER SCRIPT -->
+    <script>
+        $(document).ready(function() {
+            // Initialize the refined customer slider
+            $('.customer-slider').slick({
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                arrows: true,
+                dots: true,
+                infinite: true,
+                autoplay: false, // Disabled for desktop
+                autoplaySpeed: 4000,
+                pauseOnHover: true,
+                pauseOnFocus: true,
+                speed: 600,
+                cssEase: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+                adaptiveHeight: false,
+                variableWidth: false,
+                centerMode: false,
+                focusOnSelect: true,
+                accessibility: true,
+                prevArrow: '<button type="button" class="slick-prev" aria-label="Previous slide"><i class="fas fa-chevron-left"></i></button>',
+                nextArrow: '<button type="button" class="slick-next" aria-label="Next slide"><i class="fas fa-chevron-right"></i></button>',
+                responsive: [
+                    {
+                        breakpoint: 1200,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1,
+                            autoplay: false,
+                            infinite: true,
+                            arrows: true,
+                            dots: true
+                        }
+                    },
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            autoplay: true, // Enable auto-slide for mobile
+                            autoplaySpeed: 3500,
+                            arrows: false, // Hide arrows on mobile
+                            dots: true,
+                            infinite: true,
+                            pauseOnHover: false,
+                            swipeToSlide: true,
+                            touchMove: true,
+                            centerMode: false,
+                            variableWidth: false,
+                            adaptiveHeight: true // Allow height adaptation on mobile
+                        }
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            autoplay: true,
+                            autoplaySpeed: 4000,
+                            arrows: false,
+                            dots: true,
+                            infinite: true,
+                            pauseOnHover: false,
+                            swipeToSlide: true,
+                            touchMove: true,
+                            centerMode: false,
+                            variableWidth: false,
+                            adaptiveHeight: true
+                        }
+                    }
+                ]
+            });
+
+            // Auto-play videos on hover (desktop only)
+            if (window.innerWidth > 768) {
+                $('.video-card').hover(
+                    function() {
+                        const video = $(this).find('video')[0];
+                        if (video) {
+                            video.play().catch(e => console.log('Video play failed:', e));
+                        }
+                    },
+                    function() {
+                        const video = $(this).find('video')[0];
+                        if (video) {
+                            video.pause();
+                            video.currentTime = 0;
+                        }
+                    }
+                );
+            }
+
+            // Intersection Observer for lazy loading videos
+            if ('IntersectionObserver' in window) {
+                const videoObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const video = entry.target;
+                            if (video.dataset.src) {
+                                video.src = video.dataset.src;
+                                video.removeAttribute('data-src');
+                            }
+                            videoObserver.unobserve(video);
+                        }
+                    });
+                });
+
+                document.querySelectorAll('video[data-src]').forEach(video => {
+                    videoObserver.observe(video);
+                });
+            }
+        });
+
+        document.querySelector('.modal-container').addEventListener('click', function(e) {
+    e.stopPropagation(); // Prevent closing when clicking inside modal
 });
 
-    });
-  </script>
+
+      function openVideoModal(videoSrc, title, description) {
+    $('.customer-slider').slick('slickPause');
+
+    const video = document.getElementById('modalVideo');
+    video.src = videoSrc;
+    video.load(); // Reload source
+    video.play(); // Start playing
+
+    document.getElementById('modalTitle').innerText = title;
+    document.getElementById('modalDescription').innerText = description;
+
+    const modal = document.getElementById('videoModal');
+    modal.style.display = 'flex';
+    modal.classList.add('modal-opening');
+    document.body.style.overflow = 'hidden';
+
+    setTimeout(() => {
+        modal.querySelector('.modal-close').focus();
+    }, 100);
+}
+
+
+        function closeVideoModal() {
+            const modal = document.getElementById('videoModal');
+            const video = document.getElementById('modalVideo');
+            
+            // Hide modal
+            modal.style.display = 'none';
+            modal.classList.remove('modal-opening');
+            
+            // Stop and reset video
+            video.pause();
+            video.currentTime = 0;
+            video.src = '';
+            
+            // Resume slider
+            $('.customer-slider').slick('slickPlay');
+            
+            // Restore body scroll
+            document.body.style.overflow = '';
+        }
+
+        // Founder modal functions
+        function openFounderModal() {
+            document.getElementById('founderModal').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeFounderModal() {
+            document.getElementById('founderModal').style.display = 'none';
+            document.body.style.overflow = '';
+        }
+
+        function closeModal() {
+            closeFounderModal();
+        }
+
+        // Close modals with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeVideoModal();
+                closeFounderModal();
+            }
+        });
+
+        // Close founder modal when clicking outside
+        window.onclick = function(event) {
+            const founderModal = document.getElementById('founderModal');
+            if (event.target === founderModal) {
+                closeFounderModal();
+            }
+        }
+
+        // Responsive behavior adjustments
+        window.addEventListener('resize', function() {
+            // Reinitialize slider on orientation change (mobile)
+            if (window.innerWidth <= 768) {
+                $('.customer-slider').slick('refresh');
+            }
+        });
+    </script>
   
     <!-- Jquery JS-->
     <script src="vendor/jquery/jquery.min.js"></script>
@@ -730,44 +961,24 @@
     <script src="js/global.js"></script>
     <script>
         // Header scroll effect - show background when scrolling down
-window.addEventListener('scroll', function() {
-    const header = document.getElementById('header');
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    
-    // Add background when scrolling down more than 50px
-    if (scrollTop > 50) {
-        header.classList.add('scrolled');
-    } else {
-        header.classList.remove('scrolled');
-    }
-});
-
-// Ensure header starts without background
-document.addEventListener('DOMContentLoaded', function() {
-    const header = document.getElementById('header');
-    header.classList.remove('scrolled');
-});
-    </script>
-    <script>
-        function openModal() {
-            document.getElementById('founderModal').style.display = 'flex';
-        }
-        
-        function closeModal() {
-            document.getElementById('founderModal').style.display = 'none';
-        }
-        
-        window.onclick = function(event) {
-            const modal = document.getElementById('founderModal');
-            if (event.target === modal) {
-                closeModal();
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            // Add background when scrolling down more than 50px
+            if (scrollTop > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
             }
-        }
+        });
 
-        
-        </script>
-        
-
+        // Ensure header starts without background
+        document.addEventListener('DOMContentLoaded', function() {
+            const header = document.getElementById('header');
+            header.classList.remove('scrolled');
+        });
+    </script>
         
 </body>
 
