@@ -339,7 +339,7 @@ section.p-t-10.p-b-55 {
   width: 100%;
   height: 240px;
   overflow: hidden;
-  background: #ffff;
+ background: transparent !important;
   flex-shrink: 0;
 }
 
