@@ -28,6 +28,7 @@ body {
 .header-mobile,
 .header-mobile__bar {
   background: rgba(14, 14, 14, 0.151) !important;
+
   transition: all 0.3s ease !important;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
   position: relative !important; /* Ensure proper stacking */
@@ -57,7 +58,7 @@ body {
 .header__bar {
   padding: 6px 0 !important;
   height: auto !important;
-  min-height: 55px !important;
+  min-height: 85px !important;
 }
 
 .header-mobile__bar {
@@ -165,7 +166,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 80px;
+  height: 86px;
   line-height: 80px;
 }
 
@@ -314,7 +315,7 @@ section.p-t-10.p-b-55 {
   background: #ffffff !important; /* CONFIRMED: Pure white background */
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+ 
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   cursor: pointer;
   position: relative;
@@ -338,7 +339,7 @@ section.p-t-10.p-b-55 {
   width: 100%;
   height: 240px;
   overflow: hidden;
-  background: #f0f0f0;
+  background: #ffff;
   flex-shrink: 0;
 }
 
