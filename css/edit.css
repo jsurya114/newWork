@@ -481,13 +481,13 @@ section.p-t-10.p-b-55 {
 }
 
 .customer-slider .slick-slide {
-  height: auto;
+  height: auto !important;
   display: flex !important;
+  align-items: stretch !important;
 }
 
 .customer-slider .slick-slide > div {
-  height: 100%;
-  width: 100%;
+  height: auto !important;
 }
 
 /* Custom Arrow Styles */
@@ -931,9 +931,11 @@ section.p-t-10.p-b-55 {
   }
 
   .video-card {
-    min-height: 380px;
-    border-radius: 15px;
-  }
+  height: auto !important;
+  min-height: 450px;
+  display: flex;
+  flex-direction: column;
+}
 
   .video-container {
     height: 180px;
