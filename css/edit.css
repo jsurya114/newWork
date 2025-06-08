@@ -315,13 +315,13 @@ section.p-t-10.p-b-55 {
   background: #ffffff !important; /* CONFIRMED: Pure white background */
   border-radius: 20px;
   overflow: hidden;
- 
+   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   cursor: pointer;
   position: relative;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: auto !important;
   min-height: 450px;
   max-width: 380px;
   margin: 0 auto;
@@ -416,7 +416,7 @@ section.p-t-10.p-b-55 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 180px;
+  min-height: 180px !important;
   background: #ffffff !important; /* CONFIRMED: White background */
 }
 
@@ -473,11 +473,13 @@ section.p-t-10.p-b-55 {
 .customer-slider .slick-list {
   margin: 0 -15px;
   padding: 20px 0 40px 0;
+height: auto !important;
 }
 
 .customer-slider .slick-track {
   display: flex;
   align-items: stretch;
+  height: auto !important;
 }
 
 .customer-slider .slick-slide {
@@ -828,9 +830,8 @@ section.p-t-10.p-b-55 {
   }
 
   .video-card {
-    min-height: 400px;
-    max-width: none;
-    margin: 0;
+    min-height: 400px !important;
+    height: auto !important;
   }
 
   .video-container {
@@ -932,7 +933,7 @@ section.p-t-10.p-b-55 {
 
   .video-card {
   height: auto !important;
-  min-height: 450px;
+  min-height: 450px !important;
   display: flex;
   flex-direction: column;
 }
@@ -943,7 +944,7 @@ section.p-t-10.p-b-55 {
 
   .project-info {
     padding: 18px;
-    min-height: 150px;
+    min-height: 150px !important;
   }
 
   .project-title {
