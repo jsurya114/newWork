@@ -21,17 +21,24 @@ body {
   transition: all 0.4s ease !important;
 }
 
-/* ENHANCED HEADER TINT EFFECT - Better visibility */
-.header, 
-.header-1, 
-.header__bar, 
-.header-mobile, 
+/* FIXED: Remove double-layered header appearance */
+.header,
+.header-1,
+.header__bar,
+.header-mobile,
 .header-mobile__bar {
-  background: rgba(146, 146, 146, 0) !important; /* Slightly stronger tint for better visibility */
+  background: rgba(14, 14, 14, 0.151) !important;
   transition: all 0.3s ease !important;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important; /* Subtle shadow for depth */
-}   
+  position: relative !important; /* Ensure proper stacking */
+  z-index: 1 !important; /* Prevent layering conflicts */
+}
+
+/* Remove any duplicate background layers */
+.header__bar::before,
+.header-mobile__bar::before {
+  display: none !important;
+}
 
 /* Header when scrolled - solid background */
 #header.scrolled .header,
@@ -63,7 +70,7 @@ body {
 .logo img {
   max-width: 87px !important;
   height: auto !important;
-  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.5)) brightness(1.2) contrast(1.1) !important;
+  filter: none !important;
   transition: all 0.3s ease !important;
   margin-top: 6px;
 }
@@ -75,10 +82,10 @@ body {
 .float-right {
   margin-right: 15px;
 }
-/* Mobile header background with tint */
+
+/* Mobile header background with tint - FIXED: Remove duplicate layers */
 .header-mobile__bar-inner {
-  background: rgba(0, 0, 0, 0) !important;
- 
+  background: transparent !important; /* Changed from rgba(0, 0, 0, 0) */
   transition: all 0.3s ease !important;
 }
 
@@ -96,7 +103,6 @@ body {
 /* Navigation text - enhanced visibility with better contrast */
 .header-nav-menu .menu a {
   color: #ffffff !important;
-
   font-weight: 600 !important;
   font-size: 15px !important;
   transition: all 0.3s ease !important;
@@ -123,11 +129,10 @@ body {
 /* ENHANCED SOCIAL ICONS */
 .header-social a {
   color: #ffffff !important;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6)) !important;
+  filter: none !important;
   transition: all 0.3s ease !important;
   padding: 8px !important;
   border-radius: 50% !important;
-
   margin: 0 4px !important;
 }
 
@@ -154,6 +159,24 @@ body {
 #header.scrolled .hamburger-inner::after {
   background-color: #333333 !important;
   box-shadow: none !important;
+}
+
+.header__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  line-height: 80px;
+}
+
+.header-nav-menu .nav-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 /* FULL SCREEN SLIDER SETUP */
@@ -228,23 +251,17 @@ section.p-t-10.p-b-55 {
   padding-top: 80px !important;
 }
 
-/* ===== REFINED CUSTOMER SECTION STYLES ===== */
+/* ===== UPDATED CUSTOMER SECTION STYLES - WHITE BACKGROUND ===== */
 .our-customers {
   padding: 80px 0 60px 0;
-  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  background: #ffffff !important; /* CHANGED: From gradient to pure white */
   position: relative;
   overflow: hidden;
 }
 
+/* Remove the grain pattern overlay for cleaner white background */
 .our-customers::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23000" opacity="0.02"/><circle cx="75" cy="75" r="1" fill="%23000" opacity="0.02"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-  pointer-events: none;
+  display: none !important; /* CHANGED: Removed grain pattern */
 }
 
 .section-title {
@@ -292,9 +309,9 @@ section.p-t-10.p-b-55 {
   align-items: stretch;
 }
 
-/* Video Card - Enhanced with consistent alignment */
+/* Video Card - Enhanced with white background */
 .video-card {
-  background: #ffffff;
+  background: #ffffff !important; /* CONFIRMED: Pure white background */
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
@@ -307,6 +324,7 @@ section.p-t-10.p-b-55 {
   min-height: 450px;
   max-width: 380px;
   margin: 0 auto;
+  border: 1px solid rgba(0, 0, 0, 0.05); /* ADDED: Subtle border for definition */
 }
 
 .video-card:hover {
@@ -398,6 +416,7 @@ section.p-t-10.p-b-55 {
   flex-direction: column;
   justify-content: space-between;
   min-height: 180px;
+  background: #ffffff !important; /* CONFIRMED: White background */
 }
 
 .project-title {
@@ -443,10 +462,10 @@ section.p-t-10.p-b-55 {
 }
 
 .project-year {
-  background: #f8f9fa;
+  background: #ffffff;
   padding: 4px 8px;
   border-radius: 12px;
-  color: #666;
+  color: #fff;
 }
 
 /* ===== SLICK SLIDER CUSTOMIZATION ===== */
@@ -477,10 +496,10 @@ section.p-t-10.p-b-55 {
   transform: translateY(-50%);
   width: 50px;
   height: 50px;
-  background: rgba(255, 255, 255, 0.95);
+  background: #fff;
   border: none;
   border-radius: 50%;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+ 
   cursor: pointer;
   z-index: 10;
   transition: all 0.3s ease;
@@ -569,10 +588,8 @@ section.p-t-10.p-b-55 {
   width: 100%;
   height: 100%;
   background: transparent;
-
   cursor: pointer;
 }
-
 
 .modal-container {
   position: relative;
@@ -1014,7 +1031,7 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Force header tint to fill edge-to-edge on all devices */
+/* FIXED: Force header tint to fill edge-to-edge without double layers */
 .header__bar,
 .header-mobile__bar,
 .header-mobile__bar-inner {
@@ -1026,6 +1043,7 @@ html {
   margin: 0 !important;
   padding-left: 0 !important;
   padding-right: 0 !important;
+  box-sizing: border-box !important; /* ADDED: Ensure proper box model */
 }
 
 /* Remove plus icon from hamburger menu */

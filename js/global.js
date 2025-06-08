@@ -651,14 +651,13 @@
             var headerbar = that.find('.header__bar');
 
             var headerbarOffsetTop = headerbar.offset().top;
-            var headerbarHeight = 75; // Set a fixed height instead of measuring
+        // Set a fixed height instead of measuring
 
             // Add placeholder for sticky spacing
-            headerbar.after("<div class='header__holder' style='height: 0px;'></div>");
 
             $(window).on('scroll', function () {
                 if ($(window).scrollTop() > headerbarOffsetTop) {
-                    $('.header__holder').css('height', headerbarHeight + 'px');
+                 
                     headerbar.addClass('header--fixed');
                 } else {
                     headerbar.removeClass("header--fixed");
