@@ -73,7 +73,7 @@ body {
   height: auto !important;
   filter: none !important;
   transition: all 0.3s ease !important;
-  margin-top: 6px;
+  margin-top: -1px;
 }
 
 #header.scrolled .logo img {
@@ -750,15 +750,15 @@ height: auto !important;
 }
 
 .close-btn {
-  position: absolute;
-  top: 15px;
-  right: 25px;
-  color: #aaa;
-  font-size: 35px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: color 0.3s ease;
-  z-index: 10;
+    position: absolute;
+    top: -22px;
+    right: 10px;
+    color: #aaa;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    z-index: 10;
 }
 
 .close-btn:hover {
@@ -794,7 +794,9 @@ height: auto !important;
 
   .logo img {
     max-width: 87px !important;
-    margin-top: 6px;
+    margin-top: 0px;
+            margin-left: 15px;
+
   }
 
   /* Slider adjustments */
@@ -827,6 +829,7 @@ height: auto !important;
   /* Mobile card adjustments */
   .video-card-wrapper {
     padding: 0 10px;
+    margin-bottom: 0 !important;
   }
 
   .video-card {
@@ -859,7 +862,7 @@ height: auto !important;
 
   .customer-slider .slick-list {
     margin: 0 -10px;
-    padding: 15px 0 30px 0;
+     padding: 15px 0 10px 0 !important;
   }
 
   /* Modal adjustments */
@@ -926,16 +929,18 @@ height: auto !important;
   .customer-slider-wrapper {
     padding: 0 5px;
   }
-
+/* 
   .video-card-wrapper {
     padding: 0 5px;
-  }
+  } */
 
   .video-card {
   height: auto !important;
-  min-height: 450px !important;
+  min-height: 411px !important;
   display: flex;
   flex-direction: column;
+  margin-bottom: 0 !important; 
+ 
 }
 
   .video-container {
@@ -952,7 +957,8 @@ height: auto !important;
   }
 
   .project-description {
-    font-size: 12px;
+    font-size: 14px;
+        margin-top: 5px;
   }
 
   .project-meta {
@@ -1100,3 +1106,4 @@ html {
     transform: none;
   }
 }
+
