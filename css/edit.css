@@ -936,7 +936,7 @@ height: auto !important;
 
   .video-card {
   height: auto !important;
-  min-height: 411px !important;
+  min-height: 389px !important;
   display: flex;
   flex-direction: column;
   margin-bottom: 0 !important; 

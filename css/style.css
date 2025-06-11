@@ -160,8 +160,8 @@ button.slick-next {
 .modal-content {
   background: white;
   padding: 20px;
-  width: 90%;
-  max-width: 700px;
+  width: 100%;
+  max-width: 900px;
   border-radius: 10px;
   text-align: center;
 }
